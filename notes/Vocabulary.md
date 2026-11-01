@@ -5,7 +5,7 @@ double braces becomes a pronounce button when built.
 
 ## Everyday words
 
-- {{le chat, cat}}
+- {{le chat, cat}}, {{le chien, dog}}
 - {{la chaise, chair}}
 - {{boire, to drink}}
 - {{l'eau, water}}

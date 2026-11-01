@@ -164,3 +164,64 @@ Capitalization is more frequent in English than in French
 
   - **-ier/yer**
     - e.g., {{le calendrier, calendar}}, {{le loyer, rent}}
+
+  - **-at**, **-et**, **-t**
+    - e.g., {{le débat, debate}}, {{le billet, ticket}}, {{le circuit, circuit/tour}}
+    - import exceptions:
+      - {{la dot, dowry}}, {{la forêt, forest}}, {{la mort, death}}, {{la nuit, night}}, {{la part, share}}, {{la plupart, most people/things}}
+  
+  - **-eur**
+    - e.g., {{le coeur, hear}}, {{l'aspirateur, vacuum cleaner}}, {{le compositeur, composer}}, {{le réfrigérateur, refrigerator}}
+  
+  - **-ien**
+    - e.g., {{le bien, good}}, {{le chien, dog}}, {{l'entretien, interview/upkeep/maintenance}}
+  
+  - **-illon**
+    - e.g., {{le bouillon, broth/bubble}}, {{le papillon, butterfly}}
+
+  - **-in**
+    - e.g., {{le chagrin, grief}}, {{le vin, wine}}, {{le jardin, garden}}
+    - exception: {{la fin, end}}
+  
+  - **-is**
+    - e.g., {{le tennis, tennis}}, {{le fouillis, mess/jumble}}
+    - exceptions: {{la souris, mouse}}, {{la vis, screw}}
+
+  - **-isme**
+    - e.g., {{le socialisme, socialism}}, {{le séisme, earthquake}}
+
+  - **-oir**, **-oin**
+    - e.g., {{le besoin, need}}, {{le miroir, mirror}}
+
+  - **-on**, **-om**
+    - e.g., {{le nom, name}}, {{le torchon, dish towel}}
+    - exceptions: {{la boisson, beverage}}, {{la chanson, song}}, {{la cloison, partition}}, {{la cuisson, cooking}}, {{la façon, manner}}, {{la leçon, lesson}}, {{la livraison, delivery}}, {{la rançon, ransom}}, {{la trahison, betrayal}}
+
+  - **-phone**
+    - e.g., {{le téléphone, telephone}}
+  
+  - **-scope**
+    - e.g., {{le trombinoscope, group photo}}
+  
+  - **-a**
+    - e.g., {{l'agenda, agenda}}, {{le visa, visa}}
+    - exceptions: {{la diva, diva}}, {{la saga, saga}}, {{la villa, villa}}, {{la polka, polka}}, {{la véranda, veranda}}
+
+  - **-as**
+    - e.g., {{le repas, meal}}, {{le matelas, mattress}}, {{le bras, arm}}
+
+  - **-ème**, **-me**, **-ome**, **-ôme**, **-aume**, **-rme**, **-sme**
+    - e.g., {{le dôme, dome}}, {{le problème, problem}}, {{le spasme, spasm}}, {{l'idiome, idiom}}, {{le royaume, kingdom}}, {{le terme, term}}, {{le poème, poem}}
+
+  - **-ble**, **-cle**, **-gle**, **-ple**
+    - e.g., {{l'angle, angle}}, {{le sable, sand}}, {{le câble, cable}}, {{le spectacle, show}}, {{le périple, journey}}, {{le temple, temple}}
+    - exceptions: {{la boucle, buckle}}, {{la fable, fable}}, {{la règle, rule}}, {{la table, table}}
+  
+  - **-ac**, **-ak**, **-ic**, **-oc**, **-uc**
+    - e.g., {{le tabac, tobacco}}, {{le kayak, kayak}}, {{le fric, money/cash}}, {{le bloc, block/writing pad}}, {{le truc, trick/thing/gimmick}}
+
+  - **-g**
+    - e.g., {{le sang, blood}}, {{le faubourg, suburb/neighborhood}}
+  
+  - **-o**, **-op**, **-ort**, **-os**, **-ot**, **-ours**, **-us**
+    - e.g., {{le numéro, number}}, {{le sirop, syrup}}, {{le sport, sport}}, {{le dos, back}}, {{let mot, word}}, {{le cours, course}}, {{le jus, juice}}
