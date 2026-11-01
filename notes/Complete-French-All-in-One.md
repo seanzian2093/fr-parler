@@ -123,3 +123,9 @@ Capitalization is more frequent in English than in French
     - e.g., {{le branchement}}, {{le départment}}
   - **-ard**
     - e.g., {{le canard}}
+    - some words ending in **-ard** may have a pejorative connotation
+      - e.g., {{le bâtard}}, {{le chauffard}}, {{le clochard}}, {{le vantard}}
+  - **-eau**, **-ou**
+    - e.g., {{le bateau}}, {{le bijou}}
+    - exceptions:
+      - {{la peau}}, {{l'eau}}

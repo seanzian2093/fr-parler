@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build French.html from French.md.
+"""Build self-contained .html pages from .md notes.
 
 Reads a Markdown notes file whose French words are wrapped in a
 ``{{word, gloss}}`` marker (the gloss is optional) and emits a single,
@@ -19,7 +19,7 @@ output is the fixed click handler and the landing redirect, which this script
 emits for you.
 
 Usage:
-    python3 scripts/pronounce.py                 # notes/French.md -> build/French.html
+    python3 scripts/pronounce.py                 # notes/Complete-French-All-in-One.md -> build/Complete-French-All-in-One.html
     python3 scripts/pronounce.py IN.md OUT.html  # one page, explicit output
     python3 scripts/pronounce.py --all           # notes/*.md -> build/*.html + index.html
     python3 scripts/pronounce.py --all --main Vocabulary   # redirect to a named page
@@ -672,8 +672,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Build self-contained .html pages from .md notes."
     )
-    parser.add_argument("in_path", nargs="?", default="notes/French.md",
-                       help="Markdown source (default: notes/French.md)")
+    parser.add_argument("in_path", nargs="?", default="notes/Complete-French-All-in-One.md",
+                       help="Markdown source (default: notes/Complete-French-All-in-One.md)")
     parser.add_argument("out_path", nargs="?",
                        help="Explicit HTML output path (overrides --out for one page)")
     parser.add_argument("--all", action="store_true",
