@@ -16,3 +16,7 @@ double braces becomes a pronounce button when built.
 - {{la pomme, apple}}
 - {{le lait, milk}}
 - {{le haie, hedge}}
+
+## Meals
+
+- {{le déjeuner, lunch}}
