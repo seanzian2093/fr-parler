@@ -54,10 +54,18 @@ double braces becomes a pronounce button when built.
 
 ## Body parts
 
-- {{la tête, head}}, {{l'œil, eye}}, {{la main, hand}}
+- {{la tête, head}}, {{l'oeil, eye}}, {{la main, hand}}
 - {{le nez, nose}}, {{la bouche, mouth}}
 
 ## Common verbs
 
 - {{manger, to eat}}, {{jouer, to play}}, {{dormir, to sleep}}
 - {{regarder, to watch}}, {{aller, to go}}, {{venir, to come}}
+
+## Pronouns
+
+- {{je, I}}, {{Nous, we}}
+- {{tu, you}}
+- {{elle, she}}, {{Il, he}}
+- {{cela, this}}
+

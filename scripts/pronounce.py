@@ -14,9 +14,13 @@ self-contained HTML file that:
   to the main page (``--main``; default: the first page), so GitHub Pages has a
   landing page to serve.
 
-No third-party dependencies and no audio files: the only JavaScript in the
-output is the fixed click handler and the landing redirect, which this script
-emits for you.
+With PWA on (default; disable with ``--no-pwa``) every page links a web
+manifest and registers a service worker, and the build also emits
+``manifest.webmanifest``, ``sw.js``, and three PNG icons into the output dir —
+making the site an installable, offline app.  No third-party dependencies: the
+icons are drawn from a rounded gradient + a white speaker glyph with only the
+stdlib, so the output stays self-contained except for those sibling PWA files
+(a lone .html degrades gracefully if they are absent).
 
 Usage:
     python3 scripts/pronounce.py                 # notes/Complete-French-All-in-One.md -> build/Complete-French-All-in-One.html
@@ -32,9 +36,12 @@ import argparse
 import glob
 import html
 import json
+import math
 import os
 import re
+import struct
 import sys
+import zlib
 
 # --------------------------------------------------------------------------- #
 # The fixed, self-contained click handler.
@@ -467,34 +474,43 @@ def render_nav(pages, current_href):
 # --------------------------------------------------------------------------- #
 # The landing page: an index.html that redirects the site root to the main page.
 # --------------------------------------------------------------------------- #
-def render_redirect(href, title):
+def render_redirect(href, title, pwa=True):
     """A minimal, no-JS-needed redirect from ``index.html`` to a page.
 
     Uses ``location.replace`` so the redirect doesn't linger in browser history,
     with a ``<meta http-equiv="refresh">`` fallback and a visible link for
     no-JS clients.  The link target is a generated same-stem filename, so it is
     safe; it is still JSON-encoded for the JS literal and HTML-escaped for the
-    attributes to be correct for any character a filename might hold.
+    attributes to be correct for any character a filename might hold.  With PWA
+    on it also carries the manifest + service-worker registration so a visitor who
+    lands on the root still boots the offline shell.
     """
     js_target = json.dumps(href)
     attr_href = html.escape(href, quote=True)
     e_title = html.escape(title)
-    return (
+    pwa_meta = PWA_META if pwa else ""
+    sw_reg = JS_SW_REGISTRATION if pwa else ""
+    # Build the full template first, then format it.  A trailing `% (...)` binds
+    # to the last literal only, so the PWA pieces must be spliced in before the
+    # format args are applied (otherwise the final "%s" line mis-formats).
+    template = (
         '<!doctype html>\n'
         '<html lang="fr">\n'
         "<head>\n"
         '  <meta charset="utf-8">\n'
         '  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        + pwa_meta +
         "  <title>Redirecting…</title>\n"
         '  <meta http-equiv="refresh" content="0; url=%s">\n'
         '  <script>location.replace(%s);</script>\n'
         "</head>\n"
         "<body>\n"
         '  <p>Redirecting to <a href="%s">%s</a>…</p>\n'
+        + sw_reg +
         "</body>\n"
         "</html>\n"
-        % (attr_href, js_target, attr_href, e_title)
     )
+    return template % (attr_href, js_target, attr_href, e_title)
 
 
 def resolve_main(pages, main_name):
@@ -520,7 +536,8 @@ def resolve_main(pages, main_name):
     return pages[0]
 
 
-def build_html(markdown_body, title="French notes", pages=None, current_href=None):
+def build_html(markdown_body, title="French notes", pages=None, current_href=None,
+               pwa=True):
     text, markers = extract_markers(markdown_body)
 
     body_html = render_blocks(text.splitlines())
@@ -533,13 +550,16 @@ def build_html(markdown_body, title="French notes", pages=None, current_href=Non
     nav = render_nav(pages, current_href) if pages else ""
     has_nav = bool(nav)
 
+    pwa_head = PWA_META if pwa else ""
+    title_tag = "  <title>%s</title>\n" % html.escape(title)
     head = (
         "<!doctype html>\n"
         '<html lang="fr">\n'
         "<head>\n"
         '  <meta charset="utf-8">\n'
         '  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        "  <title>%s</title>\n" % html.escape(title) +
+        + pwa_head +
+        title_tag +
         "  <style>\n" + CSS + "  </style>\n"
         "</head>\n"
     )
@@ -554,9 +574,293 @@ def build_html(markdown_body, title="French notes", pages=None, current_href=Non
     body_section += '  <main class="content">\n'
     body_section += "  " + body_html.replace("\n", "\n  ") + "\n"
     body_section += "  </main>\n"
-    body_section += JS_CLICK_HANDLER + "</body>\n</html>\n"
+    sw_reg = JS_SW_REGISTRATION if pwa else ""
+    body_section += JS_CLICK_HANDLER + sw_reg + "</body>\n</html>\n"
 
     return head + body_section
+
+
+# --------------------------------------------------------------------------- #
+# PWA: manifest, service worker, and a generated app icon.
+#
+# With PWA on, every page links a web manifest and registers sw.js, and the build
+# also emits manifest.webmanifest, sw.js, and three PNG icons into the output
+# dir.  The result is an installable, offline app:
+#   * the manifest declares the app name / icon / start page for the OS home
+#     screen (Android Chrome and iOS "Add to Home Screen");
+#   * sw.js precaches the whole static site and serves it offline (cache-first,
+#     falling back to the main page when the network is down);
+#   * the icons are drawn here from a rounded indigo gradient + a white speaker
+#     glyph using only the stdlib (zlib/struct) — no image library, no binary
+#     blob checked into the repo.
+#
+# Every asset URL is relative ("scope": "./", "src": "icon-…png",
+# register("sw.js")), so the same build works whether GitHub Pages serves it at a
+# domain root or under a /repo/ sub-path.  The .html pages degrade gracefully if
+# the sibling PWA files are absent (a missing manifest/worker just no-ops).
+# ---------------------------------------------------------------------------
+PWA_ICONS = [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+]
+PWA_ASSET_FILES = [
+    "manifest.webmanifest", "sw.js",
+    "icon-192.png", "icon-512.png", "icon-maskable-512.png",
+]
+
+# Injected into every page's <head>: manifest + install metadata.  The icon is the
+# full-bleed maskable one, which iOS will round for the home screen.
+PWA_META = (
+    '  <meta name="theme-color" content="#0f1115">\n'
+    '  <link rel="manifest" href="manifest.webmanifest">\n'
+    '  <link rel="apple-touch-icon" href="icon-maskable-512.png">\n'
+    '  <meta name="apple-mobile-web-app-capable" content="yes">\n'
+    '  <meta name="apple-mobile-web-app-title" content="fr-parler">\n'
+    '  <meta name="mobile-web-app-capable" content="yes">\n'
+)
+
+# Injected at the end of every page's <body>: register the offline app shell.
+# No-ops silently where service workers are unavailable.
+JS_SW_REGISTRATION = (
+    "\n<script>\n"
+    "// Install the offline app shell; no-ops where service workers are absent.\n"
+    "if ('serviceWorker' in navigator) {\n"
+    "  window.addEventListener('load', function () {\n"
+    "    navigator.serviceWorker.register('sw.js').catch(function () {});\n"
+    "  });\n"
+    "}\n"
+    "</script>\n"
+)
+
+
+def render_manifest(main_href, icons):
+    """The web app manifest, pointing at the main page and the generated icons."""
+    manifest = {
+        "name": "fr-parler",
+        "short_name": "fr-parler",
+        "description": "Self-teach French: read the notes, tap any word to hear it.",
+        "start_url": main_href,
+        "scope": "./",
+        "display": "standalone",
+        "background_color": "#0f1115",
+        "theme_color": "#0f1115",
+        "icons": icons,
+    }
+    return json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
+
+
+def render_service_worker(precache, main_href):
+    """sw.js: precache every output file, serve it cache-first, and fall back to
+    the main page when the network is unavailable."""
+    return (
+        '// Precached by scripts/pronounce.py.  Cache-first, offline fallback.\n'
+        'const CACHE = "fr-parler-v1";\n'
+        'const PRECACHE = %s;\n'
+        'const OFFLINE = %s;\n'
+        'self.addEventListener("install", function (e) {\n'
+        '  e.waitUntil(caches.open(CACHE).then(function (c) {\n'
+        '    return c.addAll(PRECACHE);\n'
+        '  }).then(function () { return self.skipWaiting(); }));\n'
+        '});\n'
+        'self.addEventListener("activate", function (e) {\n'
+        '  e.waitUntil(caches.keys().then(function (keys) {\n'
+        '    return Promise.all(keys.filter(function (k) { return k !== CACHE; })\n'
+        '        .map(function (k) { return caches.delete(k); }));\n'
+        '  }).then(function () { return self.clients.claim(); }));\n'
+        '});\n'
+        'self.addEventListener("fetch", function (e) {\n'
+        '  var req = e.request;\n'
+        '  if (req.method !== "GET") { return; }\n'
+        '  e.respondWith(caches.match(req).then(function (hit) {\n'
+        '    if (hit) { return hit; }\n'
+        '    return fetch(req).then(function (res) {\n'
+        '      var copy = res.clone();\n'
+        '      caches.open(CACHE).then(function (c) { c.put(req, copy); });\n'
+        '      return res;\n'
+        '    }).catch(function () { return caches.match(OFFLINE); });\n'
+        '  }));\n'
+        '});\n'
+        % (json.dumps(precache), json.dumps(main_href))
+    )
+
+
+# --- icon drawing, pure stdlib (zlib + struct) ---------------------------- #
+
+def _png_encode(rgba, size):
+    """Encode a flat RGBA byte buffer (length size*size*4) to PNG bytes."""
+    def chunk(tag, data):
+        return (struct.pack(">I", len(data)) + tag + data
+                + struct.pack(">I", zlib.crc32(tag + data) & 0xffffffff))
+    raw = bytearray()
+    stride = size * 4
+    for y in range(size):
+        raw.append(0)  # per-scanline filter byte (None)
+        raw += rgba[y * stride:(y + 1) * stride]
+    ihdr = struct.pack(">IIBBBBB", size, size, 8, 6, 0, 0, 0)  # 8-bit RGBA
+    out = b"\x89PNG\r\n\x1a\n"
+    out += chunk(b"IHDR", ihdr)
+    out += chunk(b"IDAT", zlib.compress(bytes(raw), 9))
+    out += chunk(b"IEND", b"")
+    return out
+
+
+def _downsample(src, M, size):
+    """Box-average an M×M RGBA buffer down to size×size for antialiasing."""
+    out = bytearray(size * size * 4)
+    scale = M / size
+    for oy in range(size):
+        y0 = int(oy * scale)
+        y1 = max(y0 + 1, int((oy + 1) * scale))
+        for ox in range(size):
+            x0 = int(ox * scale)
+            x1 = max(x0 + 1, int((ox + 1) * scale))
+            rs = gs = bs = asum = 0.0
+            for y in range(y0, y1):
+                base = y * M * 4
+                for x in range(x0, x1):
+                    i = base + x * 4
+                    a = src[i + 3] / 255.0
+                    if a:
+                        rs += src[i] * a
+                        gs += src[i + 1] * a
+                        bs += src[i + 2] * a
+                    asum += a
+            op = (oy * size + ox) * 4
+            if asum:
+                area = (y1 - y0) * (x1 - x0)
+                out[op] = int(rs / asum + 0.5)
+                out[op + 1] = int(gs / asum + 0.5)
+                out[op + 2] = int(bs / asum + 0.5)
+                out[op + 3] = int(asum / area * 255 + 0.5)
+            else:
+                out[op + 3] = 0
+    return bytes(out)
+
+
+def _npixel(n, box, M):
+    """Map normalized [0,1] -> pixel, centered in an M-sized canvas via `box`."""
+    return M * (0.5 + (n - 0.5) * box)
+
+
+def _fill_rect(buf, M, x0, y0, x1, y1, color):
+    x0, x1 = max(0, int(x0)), min(M, int(x1) + 1)
+    y0, y1 = max(0, int(y0)), min(M, int(y1) + 1)
+    r, g, b = color[0], color[1], color[2]
+    for y in range(y0, y1):
+        base = y * M * 4
+        for x in range(x0, x1):
+            i = base + x * 4
+            buf[i], buf[i + 1], buf[i + 2], buf[i + 3] = r, g, b, 255
+
+
+def _fill_polygon(buf, M, poly, color):
+    px = [(int(x), int(y)) for x, y in poly]
+    ys = [p[1] for p in px]
+    r, g, b = color[0], color[1], color[2]
+    for y in range(min(ys), max(ys) + 1):
+        xints = []
+        n = len(px)
+        for i in range(n):
+            x1, y1 = px[i]
+            x2, y2 = px[(i + 1) % n]
+            if (y1 <= y < y2) or (y2 <= y < y1):
+                xints.append(x1 + (y - y1) * (x2 - x1) / (y2 - y1))
+        xints.sort()
+        for k in range(0, len(xints) - 1, 2):
+            xa = max(0, int(xints[k]))
+            xb = min(M, int(xints[k + 1]) + 1)
+            base = y * M * 4
+            for x in range(xa, xb):
+                i = base + x * 4
+                buf[i], buf[i + 1], buf[i + 2], buf[i + 3] = r, g, b, 255
+
+
+def _fill_arc(buf, M, cx, cy, radius, half_ang, thickness, color):
+    r0, r1 = radius - thickness / 2, radius + thickness / 2
+    r02, r12 = r0 * r0, r1 * r1
+    r, g, b = color[0], color[1], color[2]
+    for y in range(max(0, int(cy - radius)), min(M, int(cy + radius) + 1)):
+        dy = y - cy
+        for x in range(max(0, int(cx - radius)), min(M, int(cx + radius) + 1)):
+            dx = x - cx
+            d2 = dx * dx + dy * dy
+            if r02 <= d2 <= r12 and -half_ang <= math.atan2(dy, dx) <= half_ang:
+                i = (y * M + x) * 4
+                buf[i], buf[i + 1], buf[i + 2], buf[i + 3] = r, g, b, 255
+
+
+def _draw_background(buf, M):
+    """A vertical indigo gradient (accent -> indigo-600)."""
+    top = (129, 140, 248)
+    bot = (79, 70, 229)
+    for y in range(M):
+        t = y / (M - 1)
+        r = int(top[0] + (bot[0] - top[0]) * t)
+        g = int(top[1] + (bot[1] - top[1]) * t)
+        b = int(top[2] + (bot[2] - top[2]) * t)
+        buf[y * M * 4:(y + 1) * M * 4] = bytes((r, g, b, 255)) * M
+
+
+def _round_mask(buf, M, radius):
+    """Zero the alpha of the four corners outside a rounded rect (radius)."""
+    r2 = radius * radius
+    for y in range(M):
+        dy = y if y < M - 1 - y else M - 1 - y
+        base = y * M * 4
+        for x in range(M):
+            dx = x if x < M - 1 - x else M - 1 - x
+            if dx < radius and dy < radius and dx * dx + dy * dy > r2:
+                buf[base + x * 4 + 3] = 0
+
+
+def _draw_speaker(buf, M, box):
+    """A white speaker + two sound waves, centered, sized by `box` (0..1)."""
+    w = (255, 255, 255)
+    # back block of the speaker
+    _fill_rect(buf, M, _npixel(0.25, box, M), _npixel(0.42, box, M),
+               _npixel(0.39, box, M), _npixel(0.58, box, M), w)
+    # flaring cone opening to the right
+    _fill_polygon(buf, M, [
+        (_npixel(0.39, box, M), _npixel(0.34, box, M)),
+        (_npixel(0.55, box, M), _npixel(0.16, box, M)),
+        (_npixel(0.55, box, M), _npixel(0.84, box, M)),
+        (_npixel(0.39, box, M), _npixel(0.66, box, M)),
+    ], w)
+    # two sound waves to the right of the cone
+    cx, cy = _npixel(0.57, box, M), _npixel(0.50, box, M)
+    for rnorm in (0.10, 0.17):
+        _fill_arc(buf, M, cx, cy, rnorm * box * M, math.radians(40),
+                  0.03 * box * M, w)
+
+
+def _make_icon_png(size, maskable):
+    """Draw the app icon at `size` px.  `maskable` is full-bleed (the platform
+    masks it) vs. a rounded corner, with the glyph kept inside the safe zone."""
+    M = 1024
+    buf = bytearray(M * M * 4)
+    _draw_background(buf, M)
+    _draw_speaker(buf, M, 0.70 if not maskable else 0.56)
+    if not maskable:
+        _round_mask(buf, M, int(M * 0.22))
+    return _png_encode(_downsample(buf, M, size), size)
+
+
+def write_pwa_assets(out_dir, out_files, main_href):
+    """Emit manifest.webmanifest, sw.js, and the icon PNGs into `out_dir`."""
+    os.makedirs(out_dir, exist_ok=True)
+    precache = out_files + PWA_ASSET_FILES
+    with open(os.path.join(out_dir, "manifest.webmanifest"), "w", encoding="utf-8") as f:
+        f.write(render_manifest(main_href, PWA_ICONS))
+    with open(os.path.join(out_dir, "sw.js"), "w", encoding="utf-8") as f:
+        f.write(render_service_worker(precache, main_href))
+    for size, maskable, name in ((192, False, "icon-192.png"),
+                                 (512, False, "icon-512.png"),
+                                 (512, True, "icon-maskable-512.png")):
+        with open(os.path.join(out_dir, name), "wb") as f:
+            f.write(_make_icon_png(size, maskable))
+        print("Wrote %s" % os.path.join(out_dir, name))
+    print("Wrote PWA assets into %s" % out_dir)
 
 
 # --------------------------------------------------------------------------- #
@@ -610,12 +914,13 @@ def discover_pages(src_dir):
     return pages
 
 
-def build_one(in_path, out_path, pages=None):
+def build_one(in_path, out_path, pages=None, pwa=True):
     """Read one Markdown page and write its self-contained HTML twin.
 
     When ``pages`` is given (as ``(href, title)`` for the sibling pages) the page
     renders a sidebar linking to them, the current one highlighted; otherwise the
-    sibling pages are discovered from the source directory.
+    sibling pages are discovered from the source directory.  With PWA on the page
+    links the manifest and registers the service worker.
     """
     with open(in_path, "r", encoding="utf-8") as f:
         body = f.read()
@@ -630,15 +935,17 @@ def build_one(in_path, out_path, pages=None):
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        f.write(build_html(body, title=title, pages=pages, current_href=current_href))
+        f.write(build_html(body, title=title, pages=pages,
+                           current_href=current_href, pwa=pwa))
 
     print("Wrote %s from %s (title: %s)" % (out_path, in_path, title))
 
 
-def build_all(src, out, main_name=None):
+def build_all(src, out, main_name=None, pwa=True):
     """Glob every *.md in ``notes`` and write a same-stem .html into ``build``,
     skipping README and other non-pages, plus an ``index.html`` that redirects
-    the site root to the main page."""
+    the site root to the main page.  With PWA on, also emits manifest, service
+    worker, and icons into ``out`` so the site is installable and offline."""
     md_files = sorted(glob.glob(os.path.join(src, "*.md")))
     if not md_files:
         print("No .md files found in %s" % src)
@@ -647,24 +954,31 @@ def build_all(src, out, main_name=None):
     # One shared sidebar: every page links to every other, built in the same run.
     pages = discover_pages(src)
 
+    out_files = []
     built = 0
     for in_path in md_files:
         stem = os.path.splitext(os.path.basename(in_path))[0]
         if stem in SKIP_STEMS:
             continue
-        build_one(in_path, os.path.join(out, default_out(in_path)), pages=pages)
+        out_name = default_out(in_path)
+        build_one(in_path, os.path.join(out, out_name), pages=pages, pwa=pwa)
+        out_files.append(out_name)
         built += 1
 
     # Landing page so GitHub Pages has an index.html to serve at the root.
     main = resolve_main(pages, main_name)
+    main_href = main[0] if main else "index.html"
     if main:
         os.makedirs(out, exist_ok=True)
         index_path = os.path.join(out, "index.html")
         with open(index_path, "w", encoding="utf-8") as f:
-            f.write(render_redirect(*main))
+            f.write(render_redirect(*main, pwa=pwa))
+        out_files.append("index.html")
         print("Wrote %s -> %s" % (index_path, main[0]))
 
     print("Built %d page(s) from %s into %s" % (built, src, out))
+    if pwa:
+        write_pwa_assets(out, out_files, main_href)
     return 0
 
 
@@ -685,13 +999,21 @@ def main(argv=None):
                        help="source directory for --all (default: notes)")
     parser.add_argument("--out", default="build",
                        help="output directory for .html (default: build)")
+    parser.add_argument("--no-pwa", action="store_true",
+                        help="skip the PWA wiring (manifest, service worker, "
+                             "icons) and emit plain HTML only")
     args = parser.parse_args(argv)
+    pwa = not args.no_pwa
 
     if args.all:
-        return build_all(args.src, args.out, main_name=args.main)
+        return build_all(args.src, args.out, main_name=args.main, pwa=pwa)
 
     out_path = args.out_path or os.path.join(args.out, default_out(args.in_path))
-    return build_one(args.in_path, out_path)
+    build_one(args.in_path, out_path, pwa=pwa)
+    if pwa:
+        out_name = os.path.basename(out_path)
+        write_pwa_assets(os.path.dirname(out_path) or ".", [out_name], out_name)
+    return 0
 
 
 if __name__ == "__main__":

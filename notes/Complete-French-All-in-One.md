@@ -548,3 +548,10 @@ The following endings **tend** to be masculine
     - place the word **ne**(or **n'** before a vowel sound) and
     - place the word **pas** directly after the verb
   - e.g, {{Michelle joue au basket, Michelle plays basketball}} -> {{Michelle ne joue pas au basket}}, {{Marius habite à Marseille, Marius lives in Marseille}} -> {{Marius n'habite pas à Marseille}}
+  - Other negative words or phrases that are used to create negative declarative sentences
+    - e.g. {{rien, nothing}}, {{plus, no longer}}, {{jamais, never}}, {{personne, nobody}}, {{ni, neihter/nor}}, {{nulle part, nowhere}}
+    - they are placed after verb,just like **pas**
+    - requires **ne** or **n'** before the verb
+      - e.g, {{Je ne sais rien, I know nothing}}
+    - unlike English, two or three negative words can be used in a French sentence
+      - e.g, {{Cela ne se fait jamais nulle part, This should never be done anywhere/nowhere}}, {{Il n'y a plus personne, There is nobody left/nobody anymore}}
