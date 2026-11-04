@@ -481,3 +481,70 @@ The following endings **tend** to be masculine
 
 ## Chapter 4 - Numbers
 
+### Numbers 0 - 50
+
+- Although consonants are generally silent in French, they are pronounced in following number: **cinq**, **six**, **sept**, **huit**, **neuf**, **dix**
+  - with **sept**, **-p-** is silent but **-t** is pronounced
+  - with **six**, **dix**, **-x** is pronounced like an **s**
+  - when **cinq**, **six**, **huit**, and **dix** are followed by a word beginning with a consonant, their final consonant is mute(silent)
+  - {{zéro, zero}}, {{un, one}}, {{deux, two}}, {{trois, three}}, {{quatre, four}}, {{cinq, five}}, {{six, six}}, {{sept, seven}}, {{huit, eight}}, {{neuf, nine}}, {{
+    dix, ten}}, {{onze, eleven}}, {{douze, twelve}}, {{treize, thirteen}}, {{quatorze, fourteen}}, {{quinze, fifteen}}, {{seize, sixteen}}
+  - {{dix-sept, seventeen}}, {{dix-huit, eighteen}}, {{dix-neuf, nineteen}}
+  - {{vingt, twenty}}, {{vingt et un, twenty-one}}
+  - {{trente, thirty}}, {{trente et un, thirty-one}}
+  - {{quarante, forty}}, {{quarante et un, forty-one}}
+  - {{cinquante, fifty}}
+
+### Number 51 - 100
+
+- 50-59
+  - {{cinquante, fifty}}, {{cinquante et un, fifty-one}}
+- 60-69
+  - {{soixante, sixty}}, {{soixante et un, sixty-one}}
+- For 70-79, add teen numbers to {{soixante, sixty}}
+  - e.g, {{soixante et onze, seventy-one}}
+- For 80-99, add {{un, one}} all the way to {{dix-neuf, nineteen}}, to {{quatre-vingts, eighty/four twenties}}
+  - e.g, {{quatre-vingt-un, eighty-one}}, {{quatre-vingt-onze, ninety-one}}, {{quatre-vingt-dix-neuf, ninety-nine}}
+- For 100 - 999
+  - add **-s** to **cent**, except when **cent** is followed by another number
+  - e.g, {{cent, one hundred}}, {{deux cents, two hundreds}}, {{huit cent vingt-quare, eight hundred twenty-four}}
+- 1000 +
+  - **never** add **-s** to **mille**
+    - e.g, {{mille, one thousnad}}, {{deux mille, two thousand}}
+  - Add **-s** to **million** and **milliard** when greater than **un**
+    - e.g, {{un million, one million}}, {{un milliard, one billion}}
+- Years are written as follow
+  - e.g., {{mille neuf cent soixante-dix-huit, 1978}} {{deux mille huit, 2008}}
+
+### Ordinal Numbers
+
+- Ordinal numbers, for most part, follow a regular pattern, ending with **-ième**.
+  - e.g., {{deuxième, second}}, {{troisième, third}}
+  - exceptions: {{premier, first}}, {{première, first}}, {{dernier, last}}, {{dernière, last}}
+
+## Chapter 5 - Vocabulary
+
+- To fill in later
+
+## Chapter 6 - Building Sentences
+
+### Declararive Sentence
+
+- Subject + Predicate
+  - e.g., {{Elle n'aime pas le bruit, She does not like noise}}
+
+- Compound Subject + Predicate
+  - e.g, {{Paul et Raymond vont à Nice, Paul and Raymond go to Nice}}, {{ Gérard ou Arthur va venir me chercher, Gerard or Arthur is going to pick me up}}
+
+- Declarative sentence with direct object nouns
+  - e.g., {{Marie aime Paul, Marie loves Paul}}, {{Tu appelles Jean, You call Jean}}, {{Elle lave la vaisselle, She washes the dishes}}
+
+- Declarative sentence with direct and indirect object nouns
+  - e.g, {{Rémy a acheté un livre à son père, Remy bought a book for his father}}
+  - in English, it could be arranged as **Remy bough his father a book**, but **NOT** in French
+
+- Negative declarative sentence
+  - To make an affirmative sentence negative
+    - place the word **ne**(or **n'** before a vowel sound) and
+    - place the word **pas** directly after the verb
+  - e.g, {{Michelle joue au basket, Michelle plays basketball}} -> {{Michelle ne joue pas au basket}}, {{Marius habite à Marseille, Marius lives in Marseille}} -> {{Marius n'habite pas à Marseille}}
