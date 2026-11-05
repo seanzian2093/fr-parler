@@ -7,7 +7,9 @@ self-contained HTML file that:
 
 * renders the Markdown "nicely" (headings, nested lists, emphasis, code),
 * turns every ``{{word, gloss}}`` into a pronounce button,
-* speaks the word with the browser's French text-to-speech when clicked,
+* speaks the word when clicked: via a native bridge (window.fpbridge -- the iOS
+  app's AVSpeechSynthesizer) if present, else the browser's French
+  text-to-speech,
 * links every page together through a left-sidebar nav (built from the other
   ``*.md`` files in the source directory), the current page highlighted,
 * in ``--all`` builds also writes an ``index.html`` that redirects the site root
@@ -16,7 +18,7 @@ self-contained HTML file that:
 
 With PWA on (default; disable with ``--no-pwa``) every page links a web
 manifest and registers a service worker, and the build also emits
-``manifest.webmanifest``, ``sw.js``, and three PNG icons into the output dir —
+``manifest.webmanifest``, ``sw.js``, and four PNG icons into the output dir —
 making the site an installable, offline app.  No third-party dependencies: the
 icons are drawn from a rounded gradient + a white speaker glyph with only the
 stdlib, so the output stays self-contained except for those sibling PWA files
@@ -46,9 +48,12 @@ import zlib
 # --------------------------------------------------------------------------- #
 # The fixed, self-contained click handler.
 #
-# A user clicks a <button class="pronounce" data-say="...">.  We read the
-# French text to speak, pick a French voice if the browser has one, and hand
-# it to the Web Speech API.  Kept deliberately tiny and dependency-free.
+# A user clicks a <button class="pronounce" data-say="...">.  We read the French
+# text to speak, then: if a native bridge (window.fpbridge) is present -- the iOS
+# app, which speaks via AVSpeechSynthesizer -- hand the word to it; otherwise pick
+# a French voice and hand it to the Web Speech API.  Bridge-first, so the very same
+# HTML works in both; fpbridge is undefined in the PWA/desktop, so that path is
+# unchanged.  Kept deliberately tiny and dependency-free.
 # --------------------------------------------------------------------------- #
 JS_CLICK_HANDLER = r"""
 <script>
@@ -78,6 +83,14 @@ JS_CLICK_HANDLER = r"""
     }
     var text = button.getAttribute("data-say");
     if (!text) {
+      return;
+    }
+    // Native bridge: the iOS app injects window.fpbridge at document start to
+    // speak via AVSpeechSynthesizer (WebKit's Web Speech API is silently
+    // unreliable on iOS).  fpbridge is undefined in the PWA/desktop, so the
+    // Web Speech path below runs unchanged for them.
+    if (window.fpbridge && window.fpbridge.speak) {
+      window.fpbridge.speak(text);
       return;
     }
     if (!("speechSynthesis" in window)) {
@@ -584,7 +597,7 @@ def build_html(markdown_body, title="French notes", pages=None, current_href=Non
 # PWA: manifest, service worker, and a generated app icon.
 #
 # With PWA on, every page links a web manifest and registers sw.js, and the build
-# also emits manifest.webmanifest, sw.js, and three PNG icons into the output
+# also emits manifest.webmanifest, sw.js, and four PNG icons into the output
 # dir.  The result is an installable, offline app:
 #   * the manifest declares the app name / icon / start page for the OS home
 #     screen (Android Chrome and iOS "Add to Home Screen");
@@ -603,10 +616,13 @@ PWA_ICONS = [
     {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
     {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
     {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    # Full-bleed 1024x1024 — also the iOS native AppIcon (Apple masks it to the
+    # squircle); see ios/fr-parler/Assets.xcassets/AppIcon.appiconset.
+    {"src": "icon-1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "maskable"},
 ]
 PWA_ASSET_FILES = [
     "manifest.webmanifest", "sw.js",
-    "icon-192.png", "icon-512.png", "icon-maskable-512.png",
+    "icon-192.png", "icon-512.png", "icon-1024.png", "icon-maskable-512.png",
 ]
 
 # Injected into every page's <head>: manifest + install metadata.  The icon is the
@@ -856,11 +872,40 @@ def write_pwa_assets(out_dir, out_files, main_href):
         f.write(render_service_worker(precache, main_href))
     for size, maskable, name in ((192, False, "icon-192.png"),
                                  (512, False, "icon-512.png"),
+                                 (1024, True, "icon-1024.png"),
                                  (512, True, "icon-maskable-512.png")):
         with open(os.path.join(out_dir, name), "wb") as f:
             f.write(_make_icon_png(size, maskable))
         print("Wrote %s" % os.path.join(out_dir, name))
     print("Wrote PWA assets into %s" % out_dir)
+
+
+# --------------------------------------------------------------------------- #
+# iOS native app icon: keep the Xcode AppIcon in sync with the drawn glyph.
+#
+# The full-bleed 1024x1024 icon the web PWA also emits is exactly the shape
+# iOS's AppIcon slot wants (Apple masks it to the squircle at runtime), so on
+# every build we refresh the iOS app's icon from the same drawing -- one step
+# keeps the web PWA and the native app icon in sync.  Independent of --no-pwa:
+# the native app needs its icon even when the web PWA is off.  Guarded on the
+# asset-catalog folder existing, so a checkout that doesn't carry ios/ (CI, or the
+# project kept as a separate repo) simply skips it -- never creating ios/ out of
+# thin air.
+# --------------------------------------------------------------------------- #
+IOS_APPICON_REL = os.path.join(
+    "ios", "fr-parler", "Assets.xcassets", "AppIcon.appiconset", "icon-1024.png")
+
+
+def sync_ios_app_icon(repo_root):
+    """Write the full-bleed 1024x1024 icon into the Xcode AppIcon set when the
+    iOS project is present; a no-op with a note when the folder is absent."""
+    dest = os.path.join(repo_root, IOS_APPICON_REL)
+    if not os.path.isdir(os.path.dirname(dest)):
+        print("Skipping iOS app icon: %s not found" % os.path.dirname(dest))
+        return
+    with open(dest, "wb") as f:
+        f.write(_make_icon_png(1024, True))
+    print("Wrote iOS app icon %s" % dest)
 
 
 # --------------------------------------------------------------------------- #
@@ -1006,14 +1051,18 @@ def main(argv=None):
     pwa = not args.no_pwa
 
     if args.all:
-        return build_all(args.src, args.out, main_name=args.main, pwa=pwa)
+        rc = build_all(args.src, args.out, main_name=args.main, pwa=pwa)
+    else:
+        out_path = args.out_path or os.path.join(args.out, default_out(args.in_path))
+        build_one(args.in_path, out_path, pwa=pwa)
+        if pwa:
+            out_name = os.path.basename(out_path)
+            write_pwa_assets(os.path.dirname(out_path) or ".", [out_name], out_name)
+        rc = 0
 
-    out_path = args.out_path or os.path.join(args.out, default_out(args.in_path))
-    build_one(args.in_path, out_path, pwa=pwa)
-    if pwa:
-        out_name = os.path.basename(out_path)
-        write_pwa_assets(os.path.dirname(out_path) or ".", [out_name], out_name)
-    return 0
+    # Keep the native app icon in sync too, whenever the iOS project is present.
+    sync_ios_app_icon(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    return rc
 
 
 if __name__ == "__main__":

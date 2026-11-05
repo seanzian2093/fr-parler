@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vocabulary</title>
+  <style>
+
+:root {
+  --fg: #e6e6e6;
+  --muted: #9ca3af;
+  --line: #333842;
+  --code-bg: #2a2f3a;
+  --btn-bg: #26304a;
+  --btn-border: #3b4a73;
+  --btn-fg: #c7d2fe;
+  --accent: #818cf8;
+  --bg: #0f1115;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+               Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  max-width: 46rem;
+  margin: 3rem auto;
+  padding: 0 1.25rem;
+}
+/* When a page carries a nav, widen and split it into two columns: a sticky
+   sidebar on the left, the content on the right.  The single-page case keeps
+   the centered layout above. */
+body.has-nav {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 64rem;
+}
+.site-nav {
+  position: sticky;
+  top: 3rem;
+  align-self: flex-start;
+  flex: 0 0 12rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  font-size: .95rem;
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav li {
+  margin: .1em 0;
+}
+.site-nav a {
+  display: block;
+  padding: .35em .6em;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.site-nav a:hover {
+  color: var(--fg);
+  background: var(--code-bg);
+}
+.site-nav a.current {
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border-color: var(--btn-border);
+  font-weight: 600;
+}
+.site-nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 46rem;
+}
+/* On narrow screens the sidebar stacks above the content instead of the side. */
+@media (max-width: 720px) {
+  body.has-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  body.has-nav .site-nav {
+    position: static;
+    flex-basis: auto;
+    max-height: none;
+  }
+}
+h1, h2, h3, h4 { line-height: 1.25; margin-top: 1.8em; }
+h1 { font-size: 2rem; border-bottom: 2px solid var(--line); padding-bottom: .3em; }
+h2 { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: .25em; }
+h3 { font-size: 1.2rem; }
+code {
+  background: var(--code-bg);
+  padding: .12em .35em;
+  border-radius: 4px;
+  font-size: .9em;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+ul { padding-left: 1.4em; }
+li { margin: .15em 0; }
+button.pronounce {
+  font: inherit;
+  font-size: .9em;
+  line-height: 1;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 999px;
+  padding: .15em .5em;
+  margin: 0 .05em;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+button.pronounce:hover { filter: brightness(.96); }
+button.pronounce:active { transform: translateY(1px); }
+button.pronounce:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.pronounce .gloss { color: var(--muted); font-style: italic; font-size: .85em; }
+@media (prefers-color-scheme: light) {
+  :root {
+    --fg: #1b1f24; --muted: #6b7280; --line: #e5e7eb;
+    --code-bg: #f3f4f6; --btn-bg: #eef2ff; --btn-border: #c7d2fe;
+    --btn-fg: #3730a3; --accent: #4f46e5; --bg: #ffffff;
+  }
+}
+  </style>
+</head>
+<body class="has-nav">
+<nav class="site-nav" aria-label="Pages">
+  <ul>
+    <li><a href="Complete-French-All-in-One.html">Complete French All-in-One</a></li>
+    <li><a class="current" href="Vocabulary.html" aria-current="page">Vocabulary</a></li>
+  </ul>
+</nav>
+  <main class="content">
+  <h1>Vocabulary</h1>
+  <p>A starter page. Edit or replace the entries below; each French word wrapped in double braces becomes a pronounce button when built.</p>
+  <h2>Everyday words</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la chaise" title="la chaise — chair">🔊 la chaise <span class="gloss">chair</span></button></li>
+  <li><button type="button" class="pronounce" data-say="boire" title="boire — to drink">🔊 boire <span class="gloss">to drink</span></button></li>
+  </ul>
+  <h2>Food and Drinks</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le pain" title="le pain — bread">🔊 le pain <span class="gloss">bread</span></button></li>
+  <li><button type="button" class="pronounce" data-say="la pomme" title="la pomme — apple">🔊 la pomme <span class="gloss">apple</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le lait" title="le lait — milk">🔊 le lait <span class="gloss">milk</span></button></li>
+  <li><button type="button" class="pronounce" data-say="l&#x27;eau" title="l&#x27;eau — water">🔊 l&#x27;eau <span class="gloss">water</span></button></li>
+  </ul>
+  <h2>Meals</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le déjeuner" title="le déjeuner — lunch">🔊 le déjeuner <span class="gloss">lunch</span></button></li>
+  </ul>
+  <h2>Numbers</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="un" title="un — one">🔊 un <span class="gloss">one</span></button>, <button type="button" class="pronounce" data-say="deux" title="deux — two">🔊 deux <span class="gloss">two</span></button>, <button type="button" class="pronounce" data-say="trois" title="trois — three">🔊 trois <span class="gloss">three</span></button>, <button type="button" class="pronounce" data-say="quatre" title="quatre — four">🔊 quatre <span class="gloss">four</span></button>, <button type="button" class="pronounce" data-say="cinq" title="cinq — five">🔊 cinq <span class="gloss">five</span></button></li>
+  <li><button type="button" class="pronounce" data-say="six" title="six — six">🔊 six <span class="gloss">six</span></button>, <button type="button" class="pronounce" data-say="sept" title="sept — seven">🔊 sept <span class="gloss">seven</span></button>, <button type="button" class="pronounce" data-say="huit" title="huit — eight">🔊 huit <span class="gloss">eight</span></button>, <button type="button" class="pronounce" data-say="neuf" title="neuf — nine">🔊 neuf <span class="gloss">nine</span></button>, <button type="button" class="pronounce" data-say="dix" title="dix — ten">🔊 dix <span class="gloss">ten</span></button></li>
+  </ul>
+  <h2>Colors</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le rouge" title="le rouge — red">🔊 le rouge <span class="gloss">red</span></button>, <button type="button" class="pronounce" data-say="le vert" title="le vert — green">🔊 le vert <span class="gloss">green</span></button>, <button type="button" class="pronounce" data-say="le bleu" title="le bleu — blue">🔊 le bleu <span class="gloss">blue</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le jaune" title="le jaune — yellow">🔊 le jaune <span class="gloss">yellow</span></button>, <button type="button" class="pronounce" data-say="le noir" title="le noir — black">🔊 le noir <span class="gloss">black</span></button>, <button type="button" class="pronounce" data-say="le blanc" title="le blanc — white">🔊 le blanc <span class="gloss">white</span></button></li>
+  </ul>
+  <h2>Greetings &amp; politeness</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="bonjour" title="bonjour — hello">🔊 bonjour <span class="gloss">hello</span></button>, <button type="button" class="pronounce" data-say="salut" title="salut — hi">🔊 salut <span class="gloss">hi</span></button>, <button type="button" class="pronounce" data-say="au revoir" title="au revoir — goodbye">🔊 au revoir <span class="gloss">goodbye</span></button></li>
+  <li><button type="button" class="pronounce" data-say="merci" title="merci — thank you">🔊 merci <span class="gloss">thank you</span></button>, <button type="button" class="pronounce" data-say="s&#x27;il vous plaît" title="s&#x27;il vous plaît — please">🔊 s&#x27;il vous plaît <span class="gloss">please</span></button>, <button type="button" class="pronounce" data-say="pardon" title="pardon — sorry">🔊 pardon <span class="gloss">sorry</span></button></li>
+  <li><button type="button" class="pronounce" data-say="oui" title="oui — yes">🔊 oui <span class="gloss">yes</span></button>, <button type="button" class="pronounce" data-say="non" title="non — no">🔊 non <span class="gloss">no</span></button></li>
+  </ul>
+  <h2>Family</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le papa" title="le papa — dad">🔊 le papa <span class="gloss">dad</span></button>, <button type="button" class="pronounce" data-say="la maman" title="la maman — mom">🔊 la maman <span class="gloss">mom</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le frère" title="le frère — brother">🔊 le frère <span class="gloss">brother</span></button>, <button type="button" class="pronounce" data-say="la sœur" title="la sœur — sister">🔊 la sœur <span class="gloss">sister</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le grand-père" title="le grand-père — grandfather">🔊 le grand-père <span class="gloss">grandfather</span></button>, <button type="button" class="pronounce" data-say="la grand-mère" title="la grand-mère — grandmother">🔊 la grand-mère <span class="gloss">grandmother</span></button></li>
+  </ul>
+  <h2>Animals</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le lapin" title="le lapin — rabbit">🔊 le lapin <span class="gloss">rabbit</span></button>, <button type="button" class="pronounce" data-say="le poisson" title="le poisson — fish">🔊 le poisson <span class="gloss">fish</span></button>, <button type="button" class="pronounce" data-say="l&#x27;oiseau" title="l&#x27;oiseau — bird">🔊 l&#x27;oiseau <span class="gloss">bird</span></button></li>
+  <li><button type="button" class="pronounce" data-say="la vache" title="la vache — cow">🔊 la vache <span class="gloss">cow</span></button>, <button type="button" class="pronounce" data-say="le cheval" title="le cheval — horse">🔊 le cheval <span class="gloss">horse</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le chat" title="le chat — cat">🔊 le chat <span class="gloss">cat</span></button>, <button type="button" class="pronounce" data-say="le chien" title="le chien — dog">🔊 le chien <span class="gloss">dog</span></button></li>
+  </ul>
+  <h2>At school</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le crayon" title="le crayon — pencil">🔊 le crayon <span class="gloss">pencil</span></button>, <button type="button" class="pronounce" data-say="le stylo" title="le stylo — pen">🔊 le stylo <span class="gloss">pen</span></button>, <button type="button" class="pronounce" data-say="la gomme" title="la gomme — eraser">🔊 la gomme <span class="gloss">eraser</span></button></li>
+  <li><button type="button" class="pronounce" data-say="la règle" title="la règle — ruler">🔊 la règle <span class="gloss">ruler</span></button>, <button type="button" class="pronounce" data-say="le cahier" title="le cahier — notebook">🔊 le cahier <span class="gloss">notebook</span></button>, <button type="button" class="pronounce" data-say="le livre" title="le livre — book">🔊 le livre <span class="gloss">book</span></button></li>
+  </ul>
+  <h2>Body parts</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la tête" title="la tête — head">🔊 la tête <span class="gloss">head</span></button>, <button type="button" class="pronounce" data-say="l&#x27;oeil" title="l&#x27;oeil — eye">🔊 l&#x27;oeil <span class="gloss">eye</span></button>, <button type="button" class="pronounce" data-say="la main" title="la main — hand">🔊 la main <span class="gloss">hand</span></button></li>
+  <li><button type="button" class="pronounce" data-say="le nez" title="le nez — nose">🔊 le nez <span class="gloss">nose</span></button>, <button type="button" class="pronounce" data-say="la bouche" title="la bouche — mouth">🔊 la bouche <span class="gloss">mouth</span></button></li>
+  </ul>
+  <h2>Common verbs</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="manger" title="manger — to eat">🔊 manger <span class="gloss">to eat</span></button>, <button type="button" class="pronounce" data-say="jouer" title="jouer — to play">🔊 jouer <span class="gloss">to play</span></button>, <button type="button" class="pronounce" data-say="dormir" title="dormir — to sleep">🔊 dormir <span class="gloss">to sleep</span></button></li>
+  <li><button type="button" class="pronounce" data-say="regarder" title="regarder — to watch">🔊 regarder <span class="gloss">to watch</span></button>, <button type="button" class="pronounce" data-say="aller" title="aller — to go">🔊 aller <span class="gloss">to go</span></button>, <button type="button" class="pronounce" data-say="venir" title="venir — to come">🔊 venir <span class="gloss">to come</span></button></li>
+  </ul>
+  <h2>Pronouns</h2>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="je" title="je — I">🔊 je <span class="gloss">I</span></button>, <button type="button" class="pronounce" data-say="Nous" title="Nous — we/us">🔊 Nous <span class="gloss">we/us</span></button></li>
+  <li><button type="button" class="pronounce" data-say="tu" title="tu — you">🔊 tu <span class="gloss">you</span></button>, <button type="button" class="pronounce" data-say="vous" title="vous — you">🔊 vous <span class="gloss">you</span></button></li>
+  <li><button type="button" class="pronounce" data-say="elle" title="elle — she">🔊 elle <span class="gloss">she</span></button>, <button type="button" class="pronounce" data-say="il" title="il — he">🔊 il <span class="gloss">he</span></button>, <button type="button" class="pronounce" data-say="ils" title="ils — they">🔊 ils <span class="gloss">they</span></button></li>
+  <li><button type="button" class="pronounce" data-say="cela" title="cela — this">🔊 cela <span class="gloss">this</span></button>, <button type="button" class="pronounce" data-say="cette" title="cette — this">🔊 cette <span class="gloss">this</span></button></li>
+  </ul>
+  </main>
+
+<script>
+(function () {
+  "use strict";
+
+  // Voices may load asynchronously; keep the latest list handy.
+  var frenchVoice = null;
+  function pickVoice() {
+    var voices = window.speechSynthesis.getVoices();
+    for (var i = 0; i < voices.length; i++) {
+      if (voices[i].lang && voices[i].lang.toLowerCase().indexOf("fr") === 0) {
+        frenchVoice = voices[i];
+        break;
+      }
+    }
+  }
+  pickVoice();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = pickVoice;
+  }
+
+  document.addEventListener("click", function (event) {
+    var button = event.target.closest ? event.target.closest("button.pronounce") : null;
+    if (!button) {
+      return;
+    }
+    var text = button.getAttribute("data-say");
+    if (!text) {
+      return;
+    }
+    // Native bridge: the iOS app injects window.fpbridge at document start to
+    // speak via AVSpeechSynthesizer (WebKit's Web Speech API is silently
+    // unreliable on iOS).  fpbridge is undefined in the PWA/desktop, so the
+    // Web Speech path below runs unchanged for them.
+    if (window.fpbridge && window.fpbridge.speak) {
+      window.fpbridge.speak(text);
+      return;
+    }
+    if (!("speechSynthesis" in window)) {
+      alert("Your browser does not support text-to-speech.");
+      return;
+    }
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "fr-FR";
+    if (frenchVoice) {
+      utter.voice = frenchVoice;
+    }
+    utter.rate = 0.9; // slightly slower is friendlier for learners
+    window.speechSynthesis.cancel(); // stop any word already playing
+    window.speechSynthesis.speak(utter);
+  });
+})();
+</script>
+</body>
+</html>

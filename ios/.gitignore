@@ -1,0 +1,8 @@
+# Xcode
+fr-parler.xcodeproj/xcuserdata/
+fr-parler.xcodeproj/project.xcworkspace/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.hmap
+# (top-level .gitignore already covers .DS_Store and build/)

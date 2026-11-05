@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete French All-in-One</title>
+  <style>
+
+:root {
+  --fg: #e6e6e6;
+  --muted: #9ca3af;
+  --line: #333842;
+  --code-bg: #2a2f3a;
+  --btn-bg: #26304a;
+  --btn-border: #3b4a73;
+  --btn-fg: #c7d2fe;
+  --accent: #818cf8;
+  --bg: #0f1115;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+               Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  max-width: 46rem;
+  margin: 3rem auto;
+  padding: 0 1.25rem;
+}
+/* When a page carries a nav, widen and split it into two columns: a sticky
+   sidebar on the left, the content on the right.  The single-page case keeps
+   the centered layout above. */
+body.has-nav {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 64rem;
+}
+.site-nav {
+  position: sticky;
+  top: 3rem;
+  align-self: flex-start;
+  flex: 0 0 12rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  font-size: .95rem;
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav li {
+  margin: .1em 0;
+}
+.site-nav a {
+  display: block;
+  padding: .35em .6em;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.site-nav a:hover {
+  color: var(--fg);
+  background: var(--code-bg);
+}
+.site-nav a.current {
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border-color: var(--btn-border);
+  font-weight: 600;
+}
+.site-nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 46rem;
+}
+/* On narrow screens the sidebar stacks above the content instead of the side. */
+@media (max-width: 720px) {
+  body.has-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  body.has-nav .site-nav {
+    position: static;
+    flex-basis: auto;
+    max-height: none;
+  }
+}
+h1, h2, h3, h4 { line-height: 1.25; margin-top: 1.8em; }
+h1 { font-size: 2rem; border-bottom: 2px solid var(--line); padding-bottom: .3em; }
+h2 { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: .25em; }
+h3 { font-size: 1.2rem; }
+code {
+  background: var(--code-bg);
+  padding: .12em .35em;
+  border-radius: 4px;
+  font-size: .9em;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+ul { padding-left: 1.4em; }
+li { margin: .15em 0; }
+button.pronounce {
+  font: inherit;
+  font-size: .9em;
+  line-height: 1;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 999px;
+  padding: .15em .5em;
+  margin: 0 .05em;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+button.pronounce:hover { filter: brightness(.96); }
+button.pronounce:active { transform: translateY(1px); }
+button.pronounce:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.pronounce .gloss { color: var(--muted); font-style: italic; font-size: .85em; }
+@media (prefers-color-scheme: light) {
+  :root {
+    --fg: #1b1f24; --muted: #6b7280; --line: #e5e7eb;
+    --code-bg: #f3f4f6; --btn-bg: #eef2ff; --btn-border: #c7d2fe;
+    --btn-fg: #3730a3; --accent: #4f46e5; --bg: #ffffff;
+  }
+}
+  </style>
+</head>
+<body class="has-nav">
+<nav class="site-nav" aria-label="Pages">
+  <ul>
+    <li><a class="current" href="Complete-French-All-in-One.html" aria-current="page">Complete French All-in-One</a></li>
+    <li><a href="Vocabulary.html">Vocabulary</a></li>
+  </ul>
+</nav>
+  <main class="content">
+  <h1>Complete French All-in-One</h1>
+  <h2>Chapter 1 - Articles</h2>
+  <h3>The definite article with nouns</h3>
+  <p>All nouns in French have a gender</p>
+  <ul>
+  <li><code>musculine</code> or <code>feminine</code></li>
+  <ul>
+  <li>whether they refer to a person, an animal, a thing or an abstract notion</li>
+  </ul>
+  </ul>
+  <p>English has only one definite article <code>the</code>, French uses</p>
+  <ul>
+  <li><code>le</code> for <code>masculine</code> nouns</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le village" title="le village — village">🔊 le village <span class="gloss">village</span></button>, <button type="button" class="pronounce" data-say="le pont" title="le pont — bridge">🔊 le pont <span class="gloss">bridge</span></button></li>
+  </ul>
+  <li><code>la</code> for <code>feminine</code> nouns</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la ville" title="la ville — city">🔊 la ville <span class="gloss">city</span></button>, <button type="button" class="pronounce" data-say="la région" title="la région — region">🔊 la région <span class="gloss">region</span></button></li>
+  </ul>
+  <li><code>les</code> for plural nouns, both <code>masculine</code> and <code>feminine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="les villages" title="les villages">🔊 les villages</button>, <button type="button" class="pronounce" data-say="les villes" title="les villes">🔊 les villes</button></li>
+  </ul>
+  <li><code>le</code> and <code>la</code> are shortened to <code>l&#x27;</code> before singular noun or adjective that begins with a vowel sound or a muted <strong>h</strong></li>
+  <ul>
+  <li><code>masculine</code>: <button type="button" class="pronounce" data-say="l&#x27;océan" title="l&#x27;océan — ocean">🔊 l&#x27;océan <span class="gloss">ocean</span></button>, <button type="button" class="pronounce" data-say="l&#x27;ami" title="l&#x27;ami — friend">🔊 l&#x27;ami <span class="gloss">friend</span></button></li>
+  <li><code>fiminine</code>: <button type="button" class="pronounce" data-say="l&#x27;île" title="l&#x27;île — island">🔊 l&#x27;île <span class="gloss">island</span></button>, <button type="button" class="pronounce" data-say="l&#x27;autoroute" title="l&#x27;autoroute — highway">🔊 l&#x27;autoroute <span class="gloss">highway</span></button></li>
+  </ul>
+  </ul>
+  <h3>The indefinite and partitive articles with nouns</h3>
+  <p>Indefinite articles(a, an or some in English) are</p>
+  <ul>
+  <li><code>un</code> for <code>masculine</code> singular noun</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="un projet" title="un projet — a project/plan">🔊 un projet <span class="gloss">a project/plan</span></button>, <button type="button" class="pronounce" data-say="un bâtiment" title="un bâtiment — a building">🔊 un bâtiment <span class="gloss">a building</span></button></li>
+  </ul>
+  <li><code>une</code> for <code>feminine</code> singular noun</li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="une maison" title="une maison — a house">🔊 une maison <span class="gloss">a house</span></button>, <button type="button" class="pronounce" data-say="une lampe" title="une lampe — a lamp">🔊 une lampe <span class="gloss">a lamp</span></button>, <button type="button" class="pronounce" data-say="une avalanche" title="une avalanche — an avalanche">🔊 une avalanche <span class="gloss">an avalanche</span></button>, <button type="button" class="pronounce" data-say="une aubergine" title="une aubergine — an eggplant">🔊 une aubergine <span class="gloss">an eggplant</span></button></li>
+  </ul>
+  <li><code>une</code> or <code>un</code> for <code>masculine</code> and/or <code>feminie</code> nouns</li>
+  <ul>
+  <li>e.g. <button type="button" class="pronounce" data-say="un(e) architecte" title="un(e) architecte — an architect">🔊 un(e) architecte <span class="gloss">an architect</span></button>, <button type="button" class="pronounce" data-say="un(e) artiste" title="un(e) artiste — an artist">🔊 un(e) artiste <span class="gloss">an artist</span></button>, <button type="button" class="pronounce" data-say="un(e) journaliste" title="un(e) journaliste — a journalist">🔊 un(e) journaliste <span class="gloss">a journalist</span></button></li>
+  </ul>
+  <li><code>des</code> for both <code>masculine</code> and <code>feminine</code> plural</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="des murs" title="des murs — walls">🔊 des murs <span class="gloss">walls</span></button>, <button type="button" class="pronounce" data-say="des balcons" title="des balcons — balconies">🔊 des balcons <span class="gloss">balconies</span></button></li>
+  </ul>
+  </ul>
+  <p>Partitive article is used when exact quantity of an item is unknown</p>
+  <ul>
+  <li>always required in French</li>
+  <li>in English, partitive article is often ommitted</li>
+  <ul>
+  <li><code>I want bread</code> instead of <code>I want some bread</code></li>
+  </ul>
+  </ul>
+  <p>It is formed by combining <code>de</code> and the definite article</p>
+  <ul>
+  <li><code>de</code> + <code>le</code> = <code>du</code></li>
+  <li><code>de</code> + <code>l&#x27;</code> = <code>de l&#x27;</code></li>
+  <li><code>de</code> + <code>la</code> = <code>de la</code></li>
+  <li><code>de</code> + <code>les</code> = <code>des</code></li>
+  <li><code>du</code>, <code>de la</code>, or <code>des</code> all become <code>de</code> in negative since quantity does not exist any longer</li>
+  <ul>
+  <li>except when using with verb <code>etre</code>, in negative, partitive article is always used</li>
+  </ul>
+  </ul>
+  <h3>Accents</h3>
+  <ul>
+  <li>Accent Aigu</li>
+  <ul>
+  <li>Acute accent is used only with the vowel <strong>e</strong>. It indicates</li>
+  <li>the vowel should be pronounced as a <em>closed</em> <em>e</em>, similar to <em>e</em> in English word <em>bed</em></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le café" title="le café — coffee">🔊 le café <span class="gloss">coffee</span></button>, <button type="button" class="pronounce" data-say="le céléri" title="le céléri — celery">🔊 le céléri <span class="gloss">celery</span></button></li>
+  </ul>
+  <li>In some words, the initial <strong>é</strong> replaces an initial <strong>s</strong>. Latin <strong>s</strong> is still alive in English cognates.</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="l&#x27;éponge" title="l&#x27;éponge — sponge">🔊 l&#x27;éponge <span class="gloss">sponge</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Accent Grave</li>
+  <ul>
+  <li>used on the vowels <strong>a</strong>, <strong>e</strong>, and <strong>u</strong></li>
+  <li>more open pronunciation</li>
+  <ul>
+  <li>e.g., <strong>è</strong> resembels the vowel sound in English word <strong>bad</strong></li>
+  <li>e.g., <button type="button" class="pronounce" data-say="à" title="à — at/in">🔊 à <span class="gloss">at/in</span></button>, <button type="button" class="pronounce" data-say="après" title="après — after">🔊 après <span class="gloss">after</span></button>, <button type="button" class="pronounce" data-say="où" title="où — where">🔊 où <span class="gloss">where</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Accent Circumflex</li>
+  <ul>
+  <li>used on <strong>a</strong>, <strong>e</strong>, <strong>i</strong>, <strong>o</strong>, and <strong>u</strong></li>
+  <li>if the English cognate contains an <strong>s</strong> that is missing in the French word, this French word will need a circumflex accent.</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le coût" title="le coût — cost">🔊 le coût <span class="gloss">cost</span></button>, <button type="button" class="pronounce" data-say="la forêt" title="la forêt — forest">🔊 la forêt <span class="gloss">forest</span></button>, <button type="button" class="pronounce" data-say="l&#x27;hôpital" title="l&#x27;hôpital — hospital">🔊 l&#x27;hôpital <span class="gloss">hospital</span></button>, <button type="button" class="pronounce" data-say="la pâte" title="la pâte">🔊 la pâte</button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Accent diaeresis, or <strong>tréma</strong></li>
+  <ul>
+  <li>used when two vowels are next to each other and the accented vowel represents a separate sound</li>
+  <ul>
+  <li>i.e., both vowel must be articulated.</li>
+  <li>e.g., <button type="button" class="pronounce" data-say="aïe" title="aïe — ouch">🔊 aïe <span class="gloss">ouch</span></button>, <button type="button" class="pronounce" data-say="Noël" title="Noël — Christmas">🔊 Noël <span class="gloss">Christmas</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Cedilla, graphic sign, not an accent</li>
+  <ul>
+  <li>used under the letter <strong>c</strong>, before vowle <strong>a</strong>, <strong>o</strong>, and <strong>u</strong></li>
+  <ul>
+  <li>not with vowels <strong>e</strong> or <strong>i</strong></li>
+  </ul>
+  <li>it changes the hard sound <strong>k</strong> (like <strong>c</strong> in <strong>catalogue</strong>) to soft sound <button type="button" class="pronounce" data-say="ça" title="ça">🔊 ça</button>(<strong>th</strong> in <strong>this</strong>, <strong>that</strong>)</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la façade" title="la façade — facade/front">🔊 la façade <span class="gloss">facade/front</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>h aspiré</li>
+  <ul>
+  <li>Some nouns start with a silent <strong>h</strong>, of which</li>
+  <ul>
+  <li>the article that precedes some needs an apostrophe, e.g., <button type="button" class="pronounce" data-say="l&#x27;habitant" title="l&#x27;habitant — habitant">🔊 l&#x27;habitant <span class="gloss">habitant</span></button></li>
+  <li>the article that precedes some does not need apostrophe, i.e., no liaison, <button type="button" class="pronounce" data-say="la haie" title="la haie — hedge">🔊 la haie <span class="gloss">hedge</span></button></li>
+  <ul>
+  <li>this is called <strong>h aspiré</strong></li>
+  </ul>
+  </ul>
+  </ul>
+  </ul>
+  <h3>Capitalization</h3>
+  <p>Capitalization is more frequent in English than in French</p>
+  <ul>
+  <li>Nationalities: adjectives that refer to nationalities are not capitalized in French</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Marie est française" title="Marie est française — Marie is French">🔊 Marie est française <span class="gloss">Marie is French</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Languages: languages are not capitalized in French</li>
+  <ul>
+  <li>e.g. <button type="button" class="pronounce" data-say="Ils apprennent l&#x27;arabe" title="Ils apprennent l&#x27;arabe — They are learning Arabic">🔊 Ils apprennent l&#x27;arabe <span class="gloss">They are learning Arabic</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Locations: when writing an address, words for street, avenue, place and other names are not capitalized in French</li>
+  <ul>
+  <li>e.g., 25, <button type="button" class="pronounce" data-say="rue de l&#x27;Université" title="rue de l&#x27;Université — University Street">🔊 rue de l&#x27;Université <span class="gloss">University Street</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Dates, time, days, months, and seasons: such words are not capitalized</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Nous partirons le 5 décembre" title="Nous partirons le 5 décembre — we&#x27;ll leave on December 5">🔊 Nous partirons le 5 décembre <span class="gloss">we&#x27;ll leave on December 5</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Religions: names of religions are not capitalized except <strong>l&#x27;Islam</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le christianisme" title="le christianisme — Christianity">🔊 le christianisme <span class="gloss">Christianity</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Geographical nouns: Geographical names are capitalized in French.</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;Asie" title="l&#x27;Asie — Asia">🔊 l&#x27;Asie <span class="gloss">Asia</span></button>, <button type="button" class="pronounce" data-say="l&#x27;Europe" title="l&#x27;Europe — Europe">🔊 l&#x27;Europe <span class="gloss">Europe</span></button>, <button type="button" class="pronounce" data-say="les États-Unis" title="les États-Unis — United States">🔊 les États-Unis <span class="gloss">United States</span></button></li>
+  <li>if the geographical noun is composed of a generic name(<em>bay, cape, river, sea</em>, etc) and a specific name, only the specific name is capitalized</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le cap Horn" title="le cap Horn — Cape Horn">🔊 le cap Horn <span class="gloss">Cape Horn</span></button></li>
+  <li><button type="button" class="pronounce" data-say="la péninsule Ibérique" title="la péninsule Ibérique — the Iberian Peninsula">🔊 la péninsule Ibérique <span class="gloss">the Iberian Peninsula</span></button></li>
+  </ul>
+  <li>Some irregular:</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="l&#x27;Asie centrale" title="l&#x27;Asie centrale — Central Asia">🔊 l&#x27;Asie centrale <span class="gloss">Central Asia</span></button>, <button type="button" class="pronounce" data-say="l&#x27;Asie Mincure" title="l&#x27;Asie Mincure — Minor Asia">🔊 l&#x27;Asie Mincure <span class="gloss">Minor Asia</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Addressing people: when writing to people in French, capitalize most titles</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="Monsieur Verneuil" title="Monsieur Verneuil — Mr Verneuil">🔊 Monsieur Verneuil <span class="gloss">Mr Verneuil</span></button>, <button type="button" class="pronounce" data-say="Madame Deneuve" title="Madame Deneuve — Madam Deneuve">🔊 Madame Deneuve <span class="gloss">Madam Deneuve</span></button>, <button type="button" class="pronounce" data-say="Monsiuer le Premier ministre" title="Monsiuer le Premier ministre — Mr Premier Minister">🔊 Monsiuer le Premier ministre <span class="gloss">Mr Premier Minister</span></button></li>
+  </ul>
+  </ul>
+  <h2>Chapter 2 - Basic Gender Endings</h2>
+  <h3>Basic Masculine Noun Endings</h3>
+  <p>The following endings <strong>tend</strong> to be masculine</p>
+  <ul>
+  <li><strong>-age</strong>, <strong>-ige</strong>, <strong>-ège</strong>, <strong>-oge</strong>, <strong>-uge</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le fromage" title="le fromage — cheese">🔊 le fromage <span class="gloss">cheese</span></button>, <button type="button" class="pronounce" data-say="le mariage" title="le mariage — marriage/wedding">🔊 le mariage <span class="gloss">marriage/wedding</span></button></li>
+  <li>exceptions:</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la cage" title="la cage — cage">🔊 la cage <span class="gloss">cage</span></button>, <button type="button" class="pronounce" data-say="la loge" title="la loge — loge/dressing room">🔊 la loge <span class="gloss">loge/dressing room</span></button>, <button type="button" class="pronounce" data-say="la page" title="la page — page">🔊 la page <span class="gloss">page</span></button></li>
+  </ul>
+  </ul>
+  <li><strong>-ail</strong>, <strong>-euil</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le fauteuil" title="le fauteuil — armchair">🔊 le fauteuil <span class="gloss">armchair</span></button>, <button type="button" class="pronounce" data-say="le seuil" title="le seuil — threshold">🔊 le seuil <span class="gloss">threshold</span></button></li>
+  </ul>
+  <li><strong>-ain</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bain" title="le bain — bath">🔊 le bain <span class="gloss">bath</span></button>, <button type="button" class="pronounce" data-say="le pain" title="le pain — bread">🔊 le pain <span class="gloss">bread</span></button></li>
+  <li>one exception: <button type="button" class="pronounce" data-say="la main" title="la main — hand">🔊 la main <span class="gloss">hand</span></button></li>
+  </ul>
+  <li><strong>-al</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le cheval" title="le cheval — horse">🔊 le cheval <span class="gloss">horse</span></button>, <button type="button" class="pronounce" data-say="le mal" title="le mal — evil">🔊 le mal <span class="gloss">evil</span></button></li>
+  </ul>
+  <li><strong>-ament</strong>, <strong>-ement</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le branchement" title="le branchement — connection">🔊 le branchement <span class="gloss">connection</span></button>, <button type="button" class="pronounce" data-say="le départment" title="le départment — department">🔊 le départment <span class="gloss">department</span></button></li>
+  </ul>
+  <li><strong>-ard</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le canard" title="le canard — duck">🔊 le canard <span class="gloss">duck</span></button></li>
+  <li>some words ending in <strong>-ard</strong> may have a pejorative connotation</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bâtard" title="le bâtard — bastard">🔊 le bâtard <span class="gloss">bastard</span></button>, <button type="button" class="pronounce" data-say="le chauffard" title="le chauffard — reckless driver">🔊 le chauffard <span class="gloss">reckless driver</span></button>, <button type="button" class="pronounce" data-say="le clochard" title="le clochard — tramp">🔊 le clochard <span class="gloss">tramp</span></button>, <button type="button" class="pronounce" data-say="le vantard" title="le vantard — braggart">🔊 le vantard <span class="gloss">braggart</span></button></li>
+  </ul>
+  </ul>
+  <li><strong>-eau</strong>, <strong>-ou</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bateau" title="le bateau — boat">🔊 le bateau <span class="gloss">boat</span></button>, <button type="button" class="pronounce" data-say="le bijou" title="le bijou — jewelry">🔊 le bijou <span class="gloss">jewelry</span></button></li>
+  <li>exceptions:</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la peau" title="la peau — skin">🔊 la peau <span class="gloss">skin</span></button>, <button type="button" class="pronounce" data-say="l&#x27;eau" title="l&#x27;eau — water">🔊 l&#x27;eau <span class="gloss">water</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-el</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;appel" title="l&#x27;appel — call">🔊 l&#x27;appel <span class="gloss">call</span></button>, <button type="button" class="pronounce" data-say="le caramel" title="le caramel — caramel">🔊 le caramel <span class="gloss">caramel</span></button>, <button type="button" class="pronounce" data-say="le logiciel" title="le logiciel — software">🔊 le logiciel <span class="gloss">software</span></button>, <button type="button" class="pronounce" data-say="le sel" title="le sel — salt">🔊 le sel <span class="gloss">salt</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ent</strong>, <strong>-ant</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;argent" title="l&#x27;argent — money">🔊 l&#x27;argent <span class="gloss">money</span></button>, <button type="button" class="pronounce" data-say="le restaurant" title="le restaurant — restaurant">🔊 le restaurant <span class="gloss">restaurant</span></button></li>
+  <li>exception:</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la dent" title="la dent — tooth">🔊 la dent <span class="gloss">tooth</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-er</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le boulager" title="le boulager — baker">🔊 le boulager <span class="gloss">baker</span></button>, <button type="button" class="pronounce" data-say="le déjeuner" title="le déjeuner — lunch">🔊 le déjeuner <span class="gloss">lunch</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ier/yer</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le calendrier" title="le calendrier — calendar">🔊 le calendrier <span class="gloss">calendar</span></button>, <button type="button" class="pronounce" data-say="le loyer" title="le loyer — rent">🔊 le loyer <span class="gloss">rent</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-at</strong>, <strong>-et</strong>, <strong>-t</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le débat" title="le débat — debate">🔊 le débat <span class="gloss">debate</span></button>, <button type="button" class="pronounce" data-say="le billet" title="le billet — ticket">🔊 le billet <span class="gloss">ticket</span></button>, <button type="button" class="pronounce" data-say="le circuit" title="le circuit — circuit/tour">🔊 le circuit <span class="gloss">circuit/tour</span></button></li>
+  <li>import exceptions:</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="la dot" title="la dot — dowry">🔊 la dot <span class="gloss">dowry</span></button>, <button type="button" class="pronounce" data-say="la forêt" title="la forêt — forest">🔊 la forêt <span class="gloss">forest</span></button>, <button type="button" class="pronounce" data-say="la mort" title="la mort — death">🔊 la mort <span class="gloss">death</span></button>, <button type="button" class="pronounce" data-say="la nuit" title="la nuit — night">🔊 la nuit <span class="gloss">night</span></button>, <button type="button" class="pronounce" data-say="la part" title="la part — share">🔊 la part <span class="gloss">share</span></button>, <button type="button" class="pronounce" data-say="la plupart" title="la plupart — most people/things">🔊 la plupart <span class="gloss">most people/things</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-eur</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le coeur" title="le coeur — hear">🔊 le coeur <span class="gloss">hear</span></button>, <button type="button" class="pronounce" data-say="l&#x27;aspirateur" title="l&#x27;aspirateur — vacuum cleaner">🔊 l&#x27;aspirateur <span class="gloss">vacuum cleaner</span></button>, <button type="button" class="pronounce" data-say="le compositeur" title="le compositeur — composer">🔊 le compositeur <span class="gloss">composer</span></button>, <button type="button" class="pronounce" data-say="le réfrigérateur" title="le réfrigérateur — refrigerator">🔊 le réfrigérateur <span class="gloss">refrigerator</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ien</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bien" title="le bien — good">🔊 le bien <span class="gloss">good</span></button>, <button type="button" class="pronounce" data-say="le chien" title="le chien — dog">🔊 le chien <span class="gloss">dog</span></button>, <button type="button" class="pronounce" data-say="l&#x27;entretien" title="l&#x27;entretien — interview/upkeep/maintenance">🔊 l&#x27;entretien <span class="gloss">interview/upkeep/maintenance</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-illon</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bouillon" title="le bouillon — broth/bubble">🔊 le bouillon <span class="gloss">broth/bubble</span></button>, <button type="button" class="pronounce" data-say="le papillon" title="le papillon — butterfly">🔊 le papillon <span class="gloss">butterfly</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-in</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le chagrin" title="le chagrin — grief">🔊 le chagrin <span class="gloss">grief</span></button>, <button type="button" class="pronounce" data-say="le vin" title="le vin — wine">🔊 le vin <span class="gloss">wine</span></button>, <button type="button" class="pronounce" data-say="le jardin" title="le jardin — garden">🔊 le jardin <span class="gloss">garden</span></button></li>
+  <li>exception: <button type="button" class="pronounce" data-say="la fin" title="la fin — end">🔊 la fin <span class="gloss">end</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-is</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le tennis" title="le tennis — tennis">🔊 le tennis <span class="gloss">tennis</span></button>, <button type="button" class="pronounce" data-say="le fouillis" title="le fouillis — mess/jumble">🔊 le fouillis <span class="gloss">mess/jumble</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la souris" title="la souris — mouse">🔊 la souris <span class="gloss">mouse</span></button>, <button type="button" class="pronounce" data-say="la vis" title="la vis — screw">🔊 la vis <span class="gloss">screw</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-isme</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le socialisme" title="le socialisme — socialism">🔊 le socialisme <span class="gloss">socialism</span></button>, <button type="button" class="pronounce" data-say="le séisme" title="le séisme — earthquake">🔊 le séisme <span class="gloss">earthquake</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-oir</strong>, <strong>-oin</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le besoin" title="le besoin — need">🔊 le besoin <span class="gloss">need</span></button>, <button type="button" class="pronounce" data-say="le miroir" title="le miroir — mirror">🔊 le miroir <span class="gloss">mirror</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-on</strong>, <strong>-om</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le nom" title="le nom — name">🔊 le nom <span class="gloss">name</span></button>, <button type="button" class="pronounce" data-say="le torchon" title="le torchon — dish towel">🔊 le torchon <span class="gloss">dish towel</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la boisson" title="la boisson — beverage">🔊 la boisson <span class="gloss">beverage</span></button>, <button type="button" class="pronounce" data-say="la chanson" title="la chanson — song">🔊 la chanson <span class="gloss">song</span></button>, <button type="button" class="pronounce" data-say="la cloison" title="la cloison — partition">🔊 la cloison <span class="gloss">partition</span></button>, <button type="button" class="pronounce" data-say="la cuisson" title="la cuisson — cooking">🔊 la cuisson <span class="gloss">cooking</span></button>, <button type="button" class="pronounce" data-say="la façon" title="la façon — manner">🔊 la façon <span class="gloss">manner</span></button>, <button type="button" class="pronounce" data-say="la leçon" title="la leçon — lesson">🔊 la leçon <span class="gloss">lesson</span></button>, <button type="button" class="pronounce" data-say="la livraison" title="la livraison — delivery">🔊 la livraison <span class="gloss">delivery</span></button>, <button type="button" class="pronounce" data-say="la rançon" title="la rançon — ransom">🔊 la rançon <span class="gloss">ransom</span></button>, <button type="button" class="pronounce" data-say="la trahison" title="la trahison — betrayal">🔊 la trahison <span class="gloss">betrayal</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-phone</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le téléphone" title="le téléphone — telephone">🔊 le téléphone <span class="gloss">telephone</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-scope</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le trombinoscope" title="le trombinoscope — group photo">🔊 le trombinoscope <span class="gloss">group photo</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-a</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;agenda" title="l&#x27;agenda — agenda">🔊 l&#x27;agenda <span class="gloss">agenda</span></button>, <button type="button" class="pronounce" data-say="le visa" title="le visa — visa">🔊 le visa <span class="gloss">visa</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la diva" title="la diva — diva">🔊 la diva <span class="gloss">diva</span></button>, <button type="button" class="pronounce" data-say="la saga" title="la saga — saga">🔊 la saga <span class="gloss">saga</span></button>, <button type="button" class="pronounce" data-say="la villa" title="la villa — villa">🔊 la villa <span class="gloss">villa</span></button>, <button type="button" class="pronounce" data-say="la polka" title="la polka — polka">🔊 la polka <span class="gloss">polka</span></button>, <button type="button" class="pronounce" data-say="la véranda" title="la véranda — veranda">🔊 la véranda <span class="gloss">veranda</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-as</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le repas" title="le repas — meal">🔊 le repas <span class="gloss">meal</span></button>, <button type="button" class="pronounce" data-say="le matelas" title="le matelas — mattress">🔊 le matelas <span class="gloss">mattress</span></button>, <button type="button" class="pronounce" data-say="le bras" title="le bras — arm">🔊 le bras <span class="gloss">arm</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ème</strong>, <strong>-me</strong>, <strong>-ome</strong>, <strong>-ôme</strong>, <strong>-aume</strong>, <strong>-rme</strong>, <strong>-sme</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le dôme" title="le dôme — dome">🔊 le dôme <span class="gloss">dome</span></button>, <button type="button" class="pronounce" data-say="le problème" title="le problème — problem">🔊 le problème <span class="gloss">problem</span></button>, <button type="button" class="pronounce" data-say="le spasme" title="le spasme — spasm">🔊 le spasme <span class="gloss">spasm</span></button>, <button type="button" class="pronounce" data-say="l&#x27;idiome" title="l&#x27;idiome — idiom">🔊 l&#x27;idiome <span class="gloss">idiom</span></button>, <button type="button" class="pronounce" data-say="le royaume" title="le royaume — kingdom">🔊 le royaume <span class="gloss">kingdom</span></button>, <button type="button" class="pronounce" data-say="le terme" title="le terme — term">🔊 le terme <span class="gloss">term</span></button>, <button type="button" class="pronounce" data-say="le poème" title="le poème — poem">🔊 le poème <span class="gloss">poem</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ble</strong>, <strong>-cle</strong>, <strong>-gle</strong>, <strong>-ple</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;angle" title="l&#x27;angle — angle">🔊 l&#x27;angle <span class="gloss">angle</span></button>, <button type="button" class="pronounce" data-say="le sable" title="le sable — sand">🔊 le sable <span class="gloss">sand</span></button>, <button type="button" class="pronounce" data-say="le câble" title="le câble — cable">🔊 le câble <span class="gloss">cable</span></button>, <button type="button" class="pronounce" data-say="le spectacle" title="le spectacle — show">🔊 le spectacle <span class="gloss">show</span></button>, <button type="button" class="pronounce" data-say="le périple" title="le périple — journey">🔊 le périple <span class="gloss">journey</span></button>, <button type="button" class="pronounce" data-say="le temple" title="le temple — temple">🔊 le temple <span class="gloss">temple</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la boucle" title="la boucle — buckle">🔊 la boucle <span class="gloss">buckle</span></button>, <button type="button" class="pronounce" data-say="la fable" title="la fable — fable">🔊 la fable <span class="gloss">fable</span></button>, <button type="button" class="pronounce" data-say="la règle" title="la règle — rule">🔊 la règle <span class="gloss">rule</span></button>, <button type="button" class="pronounce" data-say="la table" title="la table — table">🔊 la table <span class="gloss">table</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ac</strong>, <strong>-ak</strong>, <strong>-ic</strong>, <strong>-oc</strong>, <strong>-uc</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le tabac" title="le tabac — tobacco">🔊 le tabac <span class="gloss">tobacco</span></button>, <button type="button" class="pronounce" data-say="le kayak" title="le kayak — kayak">🔊 le kayak <span class="gloss">kayak</span></button>, <button type="button" class="pronounce" data-say="le fric" title="le fric — money/cash">🔊 le fric <span class="gloss">money/cash</span></button>, <button type="button" class="pronounce" data-say="le bloc" title="le bloc — block/writing pad">🔊 le bloc <span class="gloss">block/writing pad</span></button>, <button type="button" class="pronounce" data-say="le truc" title="le truc — trick/thing/gimmick">🔊 le truc <span class="gloss">trick/thing/gimmick</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-g</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le sang" title="le sang — blood">🔊 le sang <span class="gloss">blood</span></button>, <button type="button" class="pronounce" data-say="le faubourg" title="le faubourg — suburb/neighborhood">🔊 le faubourg <span class="gloss">suburb/neighborhood</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-o</strong>, <strong>-op</strong>, <strong>-ort</strong>, <strong>-os</strong>, <strong>-ot</strong>, <strong>-ours</strong>, <strong>-us</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le numéro" title="le numéro — number">🔊 le numéro <span class="gloss">number</span></button>, <button type="button" class="pronounce" data-say="le sirop" title="le sirop — syrup">🔊 le sirop <span class="gloss">syrup</span></button>, <button type="button" class="pronounce" data-say="le sport" title="le sport — sport">🔊 le sport <span class="gloss">sport</span></button>, <button type="button" class="pronounce" data-say="le dos" title="le dos — back">🔊 le dos <span class="gloss">back</span></button>, <button type="button" class="pronounce" data-say="let mot" title="let mot — word">🔊 let mot <span class="gloss">word</span></button>, <button type="button" class="pronounce" data-say="le cours" title="le cours — course">🔊 le cours <span class="gloss">course</span></button>, <button type="button" class="pronounce" data-say="le jus" title="le jus — juice">🔊 le jus <span class="gloss">juice</span></button></li>
+  <li>abbreviated words with such endings does not change gender</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la météo" title="la météo — weather forecast">🔊 la météo <span class="gloss">weather forecast</span></button>, <button type="button" class="pronounce" data-say="la photo" title="la photo — photography">🔊 la photo <span class="gloss">photography</span></button>, <button type="button" class="pronounce" data-say="la vidéo" title="la vidéo — video">🔊 la vidéo <span class="gloss">video</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ogue</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le catalogue" title="le catalogue — catalog">🔊 le catalogue <span class="gloss">catalog</span></button>, <button type="button" class="pronounce" data-say="l&#x27;épilogue" title="l&#x27;épilogue — epilogue">🔊 l&#x27;épilogue <span class="gloss">epilogue</span></button>, <button type="button" class="pronounce" data-say="le dialogue" title="le dialogue — dialogue">🔊 le dialogue <span class="gloss">dialogue</span></button>, <button type="button" class="pronounce" data-say="le prologue" title="le prologue — prologue">🔊 le prologue <span class="gloss">prologue</span></button></li>
+  <li>exception: nouns ending in <strong>-ogue</strong> that refer to certain professionals may be masculine or fiminie, depending on the person it is used</li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la drogue" title="la drogue — drug">🔊 la drogue <span class="gloss">drug</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-r</strong>, <strong>-er</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bar" title="le bar — bar">🔊 le bar <span class="gloss">bar</span></button>, <button type="button" class="pronounce" data-say="le car" title="le car — bus/coach">🔊 le car <span class="gloss">bus/coach</span></button>, <button type="button" class="pronounce" data-say="le jour" title="le jour — day">🔊 le jour <span class="gloss">day</span></button></li>
+  <li>exceptions: words ending in <strong>-eur</strong> that do not denote a profession or a machine</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la cour" title="la cour — courtyard">🔊 la cour <span class="gloss">courtyard</span></button>, <button type="button" class="pronounce" data-say="la star" title="la star — star/celebrity">🔊 la star <span class="gloss">star/celebrity</span></button>, <button type="button" class="pronounce" data-say="la tour" title="la tour — tower">🔊 la tour <span class="gloss">tower</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-re</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le centre" title="le centre — center">🔊 le centre <span class="gloss">center</span></button>, <button type="button" class="pronounce" data-say="le ventre" title="le ventre — stomach/belly">🔊 le ventre <span class="gloss">stomach/belly</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la fenêtre" title="la fenêtre — window">🔊 la fenêtre <span class="gloss">window</span></button>, <button type="button" class="pronounce" data-say="la lettre" title="la lettre — letter">🔊 la lettre <span class="gloss">letter</span></button>, <button type="button" class="pronounce" data-say="la vitre" title="la vitre — window pane">🔊 la vitre <span class="gloss">window pane</span></button>, <button type="button" class="pronounce" data-say="l&#x27;huître" title="l&#x27;huître — oyster">🔊 l&#x27;huître <span class="gloss">oyster</span></button>, <button type="button" class="pronounce" data-say="la montre" title="la montre — watch">🔊 la montre <span class="gloss">watch</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-x</strong>, <strong>-xe</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le sexe" title="le sexe — sex">🔊 le sexe <span class="gloss">sex</span></button>, <button type="button" class="pronounce" data-say="l&#x27;inox" title="l&#x27;inox — stainless steel">🔊 l&#x27;inox <span class="gloss">stainless steel</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la boxe" title="la boxe — boxing">🔊 la boxe <span class="gloss">boxing</span></button>, <button type="button" class="pronounce" data-say="la syntaxe" title="la syntaxe — syntax">🔊 la syntaxe <span class="gloss">syntax</span></button>, <button type="button" class="pronounce" data-say="la taxe" title="la taxe — tax">🔊 la taxe <span class="gloss">tax</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-e</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;ange" title="l&#x27;ange — angel">🔊 l&#x27;ange <span class="gloss">angel</span></button>, <button type="button" class="pronounce" data-say="le beurre" title="le beurre — butter">🔊 le beurre <span class="gloss">butter</span></button>, <button type="button" class="pronounce" data-say="le pouce" title="le pouce — thumb">🔊 le pouce <span class="gloss">thumb</span></button>, <button type="button" class="pronounce" data-say="le verre" title="le verre — glass">🔊 le verre <span class="gloss">glass</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la gloire" title="la gloire — glory">🔊 la gloire <span class="gloss">glory</span></button></li>
+  </ul>
+  </ul>
+  <h3>Basic Feminine Noun Endings</h3>
+  <ul>
+  <li><strong>-ade</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la grenade" title="la grenade — grenade/pomegranate">🔊 la grenade <span class="gloss">grenade/pomegranate</span></button>, <button type="button" class="pronounce" data-say="la salade" title="la salade — salad">🔊 la salade <span class="gloss">salad</span></button>, <button type="button" class="pronounce" data-say="la limonade" title="la limonade — lemonade">🔊 la limonade <span class="gloss">lemonade</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le grade" title="le grade — rank/degree">🔊 le grade <span class="gloss">rank/degree</span></button>, <button type="button" class="pronounce" data-say="le jade" title="le jade — jade">🔊 le jade <span class="gloss">jade</span></button>, <button type="button" class="pronounce" data-say="le stade" title="le stade — stadium">🔊 le stade <span class="gloss">stadium</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-aie</strong></li>
+  <ul>
+  <li>e.g. <button type="button" class="pronounce" data-say="la baie" title="la baie — berry/bay/opening">🔊 la baie <span class="gloss">berry/bay/opening</span></button>, <button type="button" class="pronounce" data-say="la craie" title="la craie — chalk">🔊 la craie <span class="gloss">chalk</span></button>, <button type="button" class="pronounce" data-say="la monnaie" title="la monnaie — change/currency">🔊 la monnaie <span class="gloss">change/currency</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-aine</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la migraine" title="la migraine — migraine">🔊 la migraine <span class="gloss">migraine</span></button>, <button type="button" class="pronounce" data-say="la semaine" title="la semaine — week">🔊 la semaine <span class="gloss">week</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le domaine" title="le domaine — estate/field/domain">🔊 le domaine <span class="gloss">estate/field/domain</span></button>, <button type="button" class="pronounce" data-say="le Maine" title="le Maine — Maine">🔊 le Maine <span class="gloss">Maine</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-aison</strong>, <strong>-oison</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la maison" title="la maison">🔊 la maison</button>, <button type="button" class="pronounce" data-say="la saison" title="la saison — season">🔊 la saison <span class="gloss">season</span></button>, <button type="button" class="pronounce" data-say="la toison" title="la toison — fleece/mane">🔊 la toison <span class="gloss">fleece/mane</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le poison" title="le poison — poison">🔊 le poison <span class="gloss">poison</span></button>, <button type="button" class="pronounce" data-say="le vison" title="le vison — mink">🔊 le vison <span class="gloss">mink</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ance</strong>, <strong>-ence</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la chance" title="la chance — chance">🔊 la chance <span class="gloss">chance</span></button>, <button type="button" class="pronounce" data-say="l&#x27;urgence" title="l&#x27;urgence — urgency/emergency">🔊 l&#x27;urgence <span class="gloss">urgency/emergency</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le silence" title="le silence — silence">🔊 le silence <span class="gloss">silence</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ande</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la viande" title="la viande — meat">🔊 la viande <span class="gloss">meat</span></button>, <button type="button" class="pronounce" data-say="la bande" title="la bande — band/bandage/group">🔊 la bande <span class="gloss">band/bandage/group</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ée</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;année" title="l&#x27;année — year">🔊 l&#x27;année <span class="gloss">year</span></button>, <button type="button" class="pronounce" data-say="la journée" title="la journée — day">🔊 la journée <span class="gloss">day</span></button>, <button type="button" class="pronounce" data-say="l&#x27;idée" title="l&#x27;idée — idea">🔊 l&#x27;idée <span class="gloss">idea</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le musée" title="le musée — museum">🔊 le musée <span class="gloss">museum</span></button>, <button type="button" class="pronounce" data-say="le lycée" title="le lycée — high school">🔊 le lycée <span class="gloss">high school</span></button>, <button type="button" class="pronounce" data-say="le trophée" title="le trophée — trophy">🔊 le trophée <span class="gloss">trophy</span></button></li>
+  <li>words indicating quantity are often fiminine:</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="une assiettée" title="une assiettée — plateful">🔊 une assiettée <span class="gloss">plateful</span></button>, <button type="button" class="pronounce" data-say="une bouchée" title="une bouchée — mouthful">🔊 une bouchée <span class="gloss">mouthful</span></button>, <button type="button" class="pronounce" data-say="une poignée" title="une poignée — handful">🔊 une poignée <span class="gloss">handful</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-esse</strong>, <strong>-osse</strong>, <strong>-ousse</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la housse" title="la housse — cover">🔊 la housse <span class="gloss">cover</span></button>, <button type="button" class="pronounce" data-say="la jeunesse" title="la jeunesse — youth">🔊 la jeunesse <span class="gloss">youth</span></button>, <button type="button" class="pronounce" data-say="la brosse" title="la brosse — brush">🔊 la brosse <span class="gloss">brush</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le carrosse" title="le carrosse — coach">🔊 le carrosse <span class="gloss">coach</span></button>, <button type="button" class="pronounce" data-say="le pamplemousse" title="le pamplemousse — grapefruit">🔊 le pamplemousse <span class="gloss">grapefruit</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ette</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la serviette" title="la serviette — towel/napkin">🔊 la serviette <span class="gloss">towel/napkin</span></button>, <button type="button" class="pronounce" data-say="l&#x27;assiette" title="l&#x27;assiette — plate/basis">🔊 l&#x27;assiette <span class="gloss">plate/basis</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le porte-serviette" title="le porte-serviette — napkin holder">🔊 le porte-serviette <span class="gloss">napkin holder</span></button>, <button type="button" class="pronounce" data-say="le squelette" title="le squelette — skeletton">🔊 le squelette <span class="gloss">skeletton</span></button>, <button type="button" class="pronounce" data-say="le bébé-éprouvette" title="le bébé-éprouvette — test-tube baby">🔊 le bébé-éprouvette <span class="gloss">test-tube baby</span></button>, <button type="button" class="pronounce" data-say="la quartette" title="la quartette — quartet">🔊 la quartette <span class="gloss">quartet</span></button>, {le quintette, quintet}, <button type="button" class="pronounce" data-say="le casse-noisette" title="le casse-noisette — nutcracker">🔊 le casse-noisette <span class="gloss">nutcracker</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-eur</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la fleur" title="la fleur — flower">🔊 la fleur <span class="gloss">flower</span></button>, <button type="button" class="pronounce" data-say="la lueur" title="la lueur — glow/light">🔊 la lueur <span class="gloss">glow/light</span></button></li>
+  <li>exceptions: nouns denoting professions and machines and</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="le bonheur" title="le bonheur — happiness">🔊 le bonheur <span class="gloss">happiness</span></button>, <button type="button" class="pronounce" data-say="l&#x27;honneur" title="l&#x27;honneur — honor">🔊 l&#x27;honneur <span class="gloss">honor</span></button>, <button type="button" class="pronounce" data-say="le labeur" title="le labeur — labor/toil">🔊 le labeur <span class="gloss">labor/toil</span></button>, <button type="button" class="pronounce" data-say="le malheur" title="le malheur — misfortune/ordeal">🔊 le malheur <span class="gloss">misfortune/ordeal</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ie</strong>, <strong>-ire</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la magie" title="la magie — magic">🔊 la magie <span class="gloss">magic</span></button>, <button type="button" class="pronounce" data-say="la vie" title="la vie — life">🔊 la vie <span class="gloss">life</span></button>, <button type="button" class="pronounce" data-say="la tapisserie" title="la tapisserie — tapestry/wallpaper">🔊 la tapisserie <span class="gloss">tapestry/wallpaper</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le génie" title="le génie — genius">🔊 le génie <span class="gloss">genius</span></button>, <button type="button" class="pronounce" data-say="l&#x27;incendie" title="l&#x27;incendie — fire">🔊 l&#x27;incendie <span class="gloss">fire</span></button>, <button type="button" class="pronounce" data-say="le parapluie" title="le parapluie — umbrella">🔊 le parapluie <span class="gloss">umbrella</span></button>, <button type="button" class="pronounce" data-say="le sosie" title="le sosie — double">🔊 le sosie <span class="gloss">double</span></button>, <button type="button" class="pronounce" data-say="le zombie" title="le zombie — zombie">🔊 le zombie <span class="gloss">zombie</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ise</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la cerise" title="la cerise — cherry">🔊 la cerise <span class="gloss">cherry</span></button>, <button type="button" class="pronounce" data-say="la chemise" title="la chemise — shirt/folder">🔊 la chemise <span class="gloss">shirt/folder</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-aille</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la taille" title="la taille — waist/size/height">🔊 la taille <span class="gloss">waist/size/height</span></button>, <button type="button" class="pronounce" data-say="l&#x27;écaille" title="l&#x27;écaille — scale/chip/flake">🔊 l&#x27;écaille <span class="gloss">scale/chip/flake</span></button></li>
+  <li>exception: <button type="button" class="pronounce" data-say="le braille" title="le braille — Braille">🔊 le braille <span class="gloss">Braille</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ille</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la famile" title="la famile — family">🔊 la famile <span class="gloss">family</span></button>, <button type="button" class="pronounce" data-say="la fille" title="la fille — girl/daughter">🔊 la fille <span class="gloss">girl/daughter</span></button>, <button type="button" class="pronounce" data-say="la vanille" title="la vanille — vanilla">🔊 la vanille <span class="gloss">vanilla</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le gorille" title="le gorille — gorilla/bodyguard">🔊 le gorille <span class="gloss">gorilla/bodyguard</span></button>, <button type="button" class="pronounce" data-say="le quadrille" title="le quadrille — quadrille">🔊 le quadrille <span class="gloss">quadrille</span></button>, <button type="button" class="pronounce" data-say="le vaudeville" title="le vaudeville — vaudeville">🔊 le vaudeville <span class="gloss">vaudeville</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ouille</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la citrouille" title="la citrouille — pumpkin">🔊 la citrouille <span class="gloss">pumpkin</span></button>, <button type="button" class="pronounce" data-say="la grenouille" title="la grenouille — frog">🔊 la grenouille <span class="gloss">frog</span></button>, <button type="button" class="pronounce" data-say="la nouille" title="la nouille — noodles">🔊 la nouille <span class="gloss">noodles</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ique</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la musique" title="la musique — music">🔊 la musique <span class="gloss">music</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le moustique" title="le moustique — mosquito">🔊 le moustique <span class="gloss">mosquito</span></button>, <button type="button" class="pronounce" data-say="le pique-nique" title="le pique-nique — picnic">🔊 le pique-nique <span class="gloss">picnic</span></button>, <button type="button" class="pronounce" data-say="le plastique" title="le plastique — plastic">🔊 le plastique <span class="gloss">plastic</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-gion</strong>, <strong>-nion</strong>, <strong>-sion</strong>, <strong>-ssion</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la compréhension" title="la compréhension — understanding">🔊 la compréhension <span class="gloss">understanding</span></button>, <button type="button" class="pronounce" data-say="l&#x27;opinion" title="l&#x27;opinion — opinion">🔊 l&#x27;opinion <span class="gloss">opinion</span></button>, <button type="button" class="pronounce" data-say="la passion" title="la passion — passion">🔊 la passion <span class="gloss">passion</span></button>, <button type="button" class="pronounce" data-say="la région" title="la région — region">🔊 la région <span class="gloss">region</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-tion</strong>, <strong>-xion</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la connexion" title="la connexion — connection">🔊 la connexion <span class="gloss">connection</span></button>, <button type="button" class="pronounce" data-say="l&#x27;information" title="l&#x27;information — information">🔊 l&#x27;information <span class="gloss">information</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="l&#x27;avion" title="l&#x27;avion — airplane">🔊 l&#x27;avion <span class="gloss">airplane</span></button>, <button type="button" class="pronounce" data-say="le champion" title="le champion — champion">🔊 le champion <span class="gloss">champion</span></button>, <button type="button" class="pronounce" data-say="le bastion" title="le bastion — bastion/stronghold">🔊 le bastion <span class="gloss">bastion/stronghold</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ite</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la limite" title="la limite — border/limit/edge">🔊 la limite <span class="gloss">border/limit/edge</span></button>, <button type="button" class="pronounce" data-say="la marguerite" title="la marguerite — daisy">🔊 la marguerite <span class="gloss">daisy</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le gîte" title="le gîte — shelter/home">🔊 le gîte <span class="gloss">shelter/home</span></button>, <button type="button" class="pronounce" data-say="le site" title="le site — site/area">🔊 le site <span class="gloss">site/area</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-té</strong>, <strong>-tié</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la santé" title="la santé — health">🔊 la santé <span class="gloss">health</span></button>, <button type="button" class="pronounce" data-say="l&#x27;amitié" title="l&#x27;amitié — friendship">🔊 l&#x27;amitié <span class="gloss">friendship</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="l&#x27;aparté" title="l&#x27;aparté — private conversation/aside">🔊 l&#x27;aparté <span class="gloss">private conversation/aside</span></button>, <button type="button" class="pronounce" data-say="l&#x27;été" title="l&#x27;été — summer">🔊 l&#x27;été <span class="gloss">summer</span></button>, <button type="button" class="pronounce" data-say="le comité" title="le comité — committee">🔊 le comité <span class="gloss">committee</span></button>, <button type="button" class="pronounce" data-say="le comté" title="le comté — county">🔊 le comté <span class="gloss">county</span></button>, <button type="button" class="pronounce" data-say="le traité" title="le traité — treaty">🔊 le traité <span class="gloss">treaty</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ode</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la mode" title="la mode — fashion/style">🔊 la mode <span class="gloss">fashion/style</span></button>, <button type="button" class="pronounce" data-say="la période" title="la période — period/time">🔊 la période <span class="gloss">period/time</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le code" title="le code — code">🔊 le code <span class="gloss">code</span></button>, <button type="button" class="pronounce" data-say="la mode" title="la mode — mode/mood/method">🔊 la mode <span class="gloss">mode/mood/method</span></button> (there are two <strong>mode</strong> here)</li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-tude</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;étude" title="l&#x27;étude — study">🔊 l&#x27;étude <span class="gloss">study</span></button>, <button type="button" class="pronounce" data-say="l&#x27;habitude" title="l&#x27;habitude — habit">🔊 l&#x27;habitude <span class="gloss">habit</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le prélude" title="le prélude — prelude">🔊 le prélude <span class="gloss">prelude</span></button>, <button type="button" class="pronounce" data-say="l&#x27;interlude" title="l&#x27;interlude — interlude">🔊 l&#x27;interlude <span class="gloss">interlude</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ure</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la voiture" title="la voiture — car">🔊 la voiture <span class="gloss">car</span></button>, <button type="button" class="pronounce" data-say="la peinture" title="la peinture — paint/painting">🔊 la peinture <span class="gloss">paint/painting</span></button>, <button type="button" class="pronounce" data-say="la lecture" title="la lecture — reading">🔊 la lecture <span class="gloss">reading</span></button>, <button type="button" class="pronounce" data-say="l&#x27;écriture" title="l&#x27;écriture — writing">🔊 l&#x27;écriture <span class="gloss">writing</span></button></li>
+  </ul>
+  </ul>
+  <h3>Other Cases</h3>
+  <ul>
+  <li><strong>-ice</strong></li>
+  <ul>
+  <li>often <code>masculine</code>, e.g., <button type="button" class="pronounce" data-say="le dentfrice" title="le dentfrice — toothpaste">🔊 le dentfrice <span class="gloss">toothpaste</span></button>, <button type="button" class="pronounce" data-say="le service" title="le service — service">🔊 le service <span class="gloss">service</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="l&#x27;avarice" title="l&#x27;avarice — greed">🔊 l&#x27;avarice <span class="gloss">greed</span></button>, <button type="button" class="pronounce" data-say="l&#x27;épice" title="l&#x27;épice — spice">🔊 l&#x27;épice <span class="gloss">spice</span></button>, <button type="button" class="pronounce" data-say="la cicatrice" title="la cicatrice — scar">🔊 la cicatrice <span class="gloss">scar</span></button>, <button type="button" class="pronounce" data-say="la malice" title="la malice — malice/mischievousness">🔊 la malice <span class="gloss">malice/mischievousness</span></button></li>
+  <li>exceptions: <code>ferminine</code> forms of <code>masculine</code> words to denote people practicing particular professions, e.g., <button type="button" class="pronounce" data-say="la rédactrice" title="la rédactrice — female editor">🔊 la rédactrice <span class="gloss">female editor</span></button>, <button type="button" class="pronounce" data-say="la directrice" title="la directrice — female director">🔊 la directrice <span class="gloss">female director</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-aire</strong>, <strong>-oire</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;anniversaire" title="l&#x27;anniversaire — birthday">🔊 l&#x27;anniversaire <span class="gloss">birthday</span></button>, <button type="button" class="pronounce" data-say="le dictionnaire" title="le dictionnaire — dictionary">🔊 le dictionnaire <span class="gloss">dictionary</span></button></li>
+  <li>long list of exceptions: <button type="button" class="pronounce" data-say="la victoire" title="la victoire — victory">🔊 la victoire <span class="gloss">victory</span></button>, <button type="button" class="pronounce" data-say="la grammaire" title="la grammaire — grammar">🔊 la grammaire <span class="gloss">grammar</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-oi</strong>, <strong>-ois</strong>, <strong>-oix</strong></li>
+  <ul>
+  <li>mostly <code>masculine</code></li>
+  <li>only exceptions: <button type="button" class="pronounce" data-say="la croix" title="la croix — cross">🔊 la croix <span class="gloss">cross</span></button>, <button type="button" class="pronounce" data-say="la foi" title="la foi — faith">🔊 la foi <span class="gloss">faith</span></button>, <button type="button" class="pronounce" data-say="la loi" title="la loi — law">🔊 la loi <span class="gloss">law</span></button>, <button type="button" class="pronounce" data-say="la noix" title="la noix — nut">🔊 la noix <span class="gloss">nut</span></button>, <button type="button" class="pronounce" data-say="la voix" title="la voix — voice">🔊 la voix <span class="gloss">voice</span></button>, <button type="button" class="pronounce" data-say="la paroi" title="la paroi — wall/partition">🔊 la paroi <span class="gloss">wall/partition</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-f</strong>, <strong>-aim</strong></li>
+  <ul>
+  <li>mostly <code>masculine</code></li>
+  <li>only exceptions: <button type="button" class="pronounce" data-say="la clef" title="la clef — key">🔊 la clef <span class="gloss">key</span></button>, <button type="button" class="pronounce" data-say="la clé" title="la clé — key">🔊 la clé <span class="gloss">key</span></button>, <button type="button" class="pronounce" data-say="la nef" title="la nef — nave">🔊 la nef <span class="gloss">nave</span></button>, <button type="button" class="pronounce" data-say="la faim" title="la faim — hunger">🔊 la faim <span class="gloss">hunger</span></button>, <button type="button" class="pronounce" data-say="la soif" title="la soif — thirst">🔊 la soif <span class="gloss">thirst</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-ole</strong>, <strong>-ôle</strong>, <strong>-ule</strong></li>
+  <ul>
+  <li>Nouns ending in above seem willing to go either way</li>
+  </ul>
+  </ul>
+  <ul>
+  <li><strong>-iste</strong>, <strong>-que</strong></li>
+  <ul>
+  <li>nouns ending in above that refer to persons can be either <code>masculine</code> or <code>feminine</code>, depending on context</li>
+  <li>e.g., <button type="button" class="pronounce" data-say="le paysagiste" title="le paysagiste — landscape artist">🔊 le paysagiste <span class="gloss">landscape artist</span></button> or <button type="button" class="pronounce" data-say="la paysagiste" title="la paysagiste — landscape artist">🔊 la paysagiste <span class="gloss">landscape artist</span></button></li>
+  <li>other nouns ending in <strong>-iste</strong> are <code>feminine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la liste" title="la liste — list">🔊 la liste <span class="gloss">list</span></button>, <button type="button" class="pronounce" data-say="la piste" title="la piste — track/path">🔊 la piste <span class="gloss">track/path</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <h3>Nous Derived from Past Participles</h3>
+  <ul>
+  <li>Nouns derived from adjectives and the <code>masculine</code> forms of the past participle are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le bien" title="le bien — good">🔊 le bien <span class="gloss">good</span></button>, <button type="button" class="pronounce" data-say="le mal" title="le mal — evil">🔊 le mal <span class="gloss">evil</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Nouns derived from adjectives and the <code>feminine</code> forms of the past participle are <code>feminine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la belle" title="la belle — the beautiful">🔊 la belle <span class="gloss">the beautiful</span></button>, <button type="button" class="pronounce" data-say="la crue" title="la crue — flood">🔊 la crue <span class="gloss">flood</span></button></li>
+  </ul>
+  </ul>
+  <h2>Chapter 3 - More French Nouns and Their Gender</h2>
+  <ul>
+  <li>As a rule, professions are <code>masculine</code> when they refer to a man and <code>feminine</code> when they refer to a woman. We can just add a final <strong>e</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;apprenti" title="l&#x27;apprenti — male apprentice">🔊 l&#x27;apprenti <span class="gloss">male apprentice</span></button> and <button type="button" class="pronounce" data-say="l&#x27;apprentie" title="l&#x27;apprentie — female apprentice">🔊 l&#x27;apprentie <span class="gloss">female apprentice</span></button>, <button type="button" class="pronounce" data-say="l&#x27;avocat" title="l&#x27;avocat — male lawyer">🔊 l&#x27;avocat <span class="gloss">male lawyer</span></button> and <button type="button" class="pronounce" data-say="l&#x27;avocate" title="l&#x27;avocate — female lawyer">🔊 l&#x27;avocate <span class="gloss">female lawyer</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>In the past, traditionally <code>masculine</code> professions, even if practiced by women, remained <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le compositeur" title="le compositeur — composer">🔊 le compositeur <span class="gloss">composer</span></button>, <button type="button" class="pronounce" data-say="le procureur" title="le procureur — prosecutor">🔊 le procureur <span class="gloss">prosecutor</span></button>, <button type="button" class="pronounce" data-say="le peintre" title="le peintre — painter">🔊 le peintre <span class="gloss">painter</span></button>, <button type="button" class="pronounce" data-say="le professeur" title="le professeur — professor/teacher">🔊 le professeur <span class="gloss">professor/teacher</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Some nouns of professions are identical in <code>masculine</code> and <code>feminine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;architecte" title="l&#x27;architecte — male architect">🔊 l&#x27;architecte <span class="gloss">male architect</span></button> and <button type="button" class="pronounce" data-say="l&#x27;architecte" title="l&#x27;architecte — female architect">🔊 l&#x27;architecte <span class="gloss">female architect</span></button></li>
+  <li>e.g., <button type="button" class="pronounce" data-say="le dentiste" title="le dentiste — male dentist">🔊 le dentiste <span class="gloss">male dentist</span></button> and <button type="button" class="pronounce" data-say="la detiste" title="la detiste — female dentist">🔊 la detiste <span class="gloss">female dentist</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Some nouns are always <code>masculine</code> whether rederring to a man or a woman</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le chef" title="le chef — leader/boss">🔊 le chef <span class="gloss">leader/boss</span></button>, <button type="button" class="pronounce" data-say="le sauveur" title="le sauveur — savior">🔊 le sauveur <span class="gloss">savior</span></button>, <button type="button" class="pronounce" data-say="le mannequin" title="le mannequin — model">🔊 le mannequin <span class="gloss">model</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Some nouns are always <code>feminine</code> whether rederring to a man or a woman</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la star" title="la star — star">🔊 la star <span class="gloss">star</span></button>, <button type="button" class="pronounce" data-say="l&#x27;idole" title="l&#x27;idole — idol">🔊 l&#x27;idole <span class="gloss">idol</span></button>, <button type="button" class="pronounce" data-say="la personne" title="la personne — person">🔊 la personne <span class="gloss">person</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Some <code>feminine</code> nouns are used only for men</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la brute" title="la brute — bully/boor">🔊 la brute <span class="gloss">bully/boor</span></button>, <button type="button" class="pronounce" data-say="la crapule" title="la crapule — villain/crook">🔊 la crapule <span class="gloss">villain/crook</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Most names of animals are <strong>épicène</strong>, meaning &quot;common&quot;, which works with either gender. To differentiate between the two sexes, we add<strong>mâle</strong> or <strong>femelle</strong>. But these names have their own gender.</li>
+  <ul>
+  <li><code>masculine</code> names, e.g., <button type="button" class="pronounce" data-say="le cochon" title="le cochon — pig">🔊 le cochon <span class="gloss">pig</span></button>, <button type="button" class="pronounce" data-say="le koala" title="le koala">🔊 le koala</button>, <button type="button" class="pronounce" data-say="le oiseau" title="le oiseau — bird">🔊 le oiseau <span class="gloss">bird</span></button></li>
+  <li><code>feminine</code> names, e.g., <button type="button" class="pronounce" data-say="la gazelle" title="la gazelle — gazelle">🔊 la gazelle <span class="gloss">gazelle</span></button>, <button type="button" class="pronounce" data-say="la souris" title="la souris — mouse">🔊 la souris <span class="gloss">mouse</span></button>, <button type="button" class="pronounce" data-say="la loutre" title="la loutre — otter">🔊 la loutre <span class="gloss">otter</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Places and the Calendar</li>
+  <ul>
+  <li><code>masculine</code> is used more commonly for cities but <code>feminine</code> is used in a more aesthetic or romantic sense</li>
+  <li>Names of towns preceded by a <code>masculine</code> definite article are <code>masculine</code></li>
+  <ul>
+  <li>e.g. <button type="button" class="pronounce" data-say="Le Harre" title="Le Harre — Le Havre">🔊 Le Harre <span class="gloss">Le Havre</span></button>, <button type="button" class="pronounce" data-say="Le Caire" title="Le Caire — Cairo">🔊 Le Caire <span class="gloss">Cairo</span></button></li>
+  </ul>
+  <li>Names of towns preceded by a <code>feminine</code> definite article are <code>feminine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="La Rochlle" title="La Rochlle — La Rochelle">🔊 La Rochlle <span class="gloss">La Rochelle</span></button>, <button type="button" class="pronounce" data-say="La Havana" title="La Havana — Havana">🔊 La Havana <span class="gloss">Havana</span></button></li>
+  </ul>
+  <li>Gender of Italian cities varies, depending on context</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="La Florence des Médicis" title="La Florence des Médicis">🔊 La Florence des Médicis</button>, <button type="button" class="pronounce" data-say="La Florence de James Ivory" title="La Florence de James Ivory">🔊 La Florence de James Ivory</button></li>
+  </ul>
+  <li>Usually, when the nouns of cities are preceded by the adjectives <strong>grand</strong>, <strong>nouveau</strong>, and <strong>vieux</strong>, they are used in <code>masculine</code> form</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Le Grand Prague" title="Le Grand Prague — grand Prague">🔊 Le Grand Prague <span class="gloss">grand Prague</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Countries ending with <strong>-e</strong> tend to be <code>feminine</code>, others <code>masculine</code>, with exceptions</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="la Chine" title="la Chine — China">🔊 la Chine <span class="gloss">China</span></button> <button type="button" class="pronounce" data-say="la France" title="la France — France">🔊 la France <span class="gloss">France</span></button>, <button type="button" class="pronounce" data-say="le Canada" title="le Canada — Canada">🔊 le Canada <span class="gloss">Canada</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le Mexique" title="le Mexique — Mexico">🔊 le Mexique <span class="gloss">Mexico</span></button></li>
+  <li>some countries do not have articles: <strong>Israëél</strong>, <strong>Oman</strong></li>
+  </ul>
+  </ul>
+  <li>Days, Months, Seasons, and Cardinal Points</li>
+  <ul>
+  <li>Days of the week are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le lundi" title="le lundi — Monday">🔊 le lundi <span class="gloss">Monday</span></button>, <button type="button" class="pronounce" data-say="le mardi" title="le mardi — Tuesday">🔊 le mardi <span class="gloss">Tuesday</span></button></li>
+  </ul>
+  <li>Months of the year are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="janvier" title="janvier — January">🔊 janvier <span class="gloss">January</span></button>, <button type="button" class="pronounce" data-say="un avril ensoleillé" title="un avril ensoleillé — a sunny April">🔊 un avril ensoleillé <span class="gloss">a sunny April</span></button></li>
+  </ul>
+  <li>Seasons are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="un hiver froid" title="un hiver froid — a cold winter">🔊 un hiver froid <span class="gloss">a cold winter</span></button>, <button type="button" class="pronounce" data-say="un printemps tardif" title="un printemps tardif — a late sprint">🔊 un printemps tardif <span class="gloss">a late sprint</span></button>, <button type="button" class="pronounce" data-say="un été pourri" title="un été pourri — a rotten summer">🔊 un été pourri <span class="gloss">a rotten summer</span></button>, <button type="button" class="pronounce" data-say="un automne pluvieux" title="un automne pluvieux — a rainy autumn/fall">🔊 un automne pluvieux <span class="gloss">a rainy autumn/fall</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Cardinal points are <code>masculine</code></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="le nord" title="le nord — north">🔊 le nord <span class="gloss">north</span></button>, <button type="button" class="pronounce" data-say="le sud" title="le sud — south">🔊 le sud <span class="gloss">south</span></button>, <button type="button" class="pronounce" data-say="l&#x27;est" title="l&#x27;est — east">🔊 l&#x27;est <span class="gloss">east</span></button>, <button type="button" class="pronounce" data-say="l&#x27;ouest" title="l&#x27;ouest — west">🔊 l&#x27;ouest <span class="gloss">west</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Plants, Wine, and Cheese</li>
+  <ul>
+  <li>Most flowers not edning in <strong>-e</strong> tend to be <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le jasmin" title="le jasmin — jasmine">🔊 le jasmin <span class="gloss">jasmine</span></button>, <button type="button" class="pronounce" data-say="le tournesol" title="le tournesol — sunflower">🔊 le tournesol <span class="gloss">sunflower</span></button></li>
+  </ul>
+  <li><code>feminine</code> flowers tend to end in <strong>-e</strong></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="la rose" title="la rose — rose">🔊 la rose <span class="gloss">rose</span></button>, <button type="button" class="pronounce" data-say="la violette" title="la violette — violet">🔊 la violette <span class="gloss">violet</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <ul>
+  <li>Most trees and shrubs tend to be <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le chêne" title="le chêne — oak">🔊 le chêne <span class="gloss">oak</span></button>, <button type="button" class="pronounce" data-say="le cèdre" title="le cèdre — cedar">🔊 le cèdre <span class="gloss">cedar</span></button>, <button type="button" class="pronounce" data-say="l&#x27;érable" title="l&#x27;érable — maple">🔊 l&#x27;érable <span class="gloss">maple</span></button>, {le pin, pine}</li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Names of fruit, nuts, and vegetables not ending in <strong>-e</strong> tend to be <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le citron" title="le citron — lemon">🔊 le citron <span class="gloss">lemon</span></button>, <button type="button" class="pronounce" data-say="le kiwi" title="le kiwi — kiwi">🔊 le kiwi <span class="gloss">kiwi</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="le concombre" title="le concombre — cucumber">🔊 le concombre <span class="gloss">cucumber</span></button>, <button type="button" class="pronounce" data-say="le gingembre" title="le gingembre — ginger">🔊 le gingembre <span class="gloss">ginger</span></button>, <button type="button" class="pronounce" data-say="le pamplemousse" title="le pamplemousse — grapefruit">🔊 le pamplemousse <span class="gloss">grapefruit</span></button></li>
+  <li>names ending with <strong>-e</strong> tend to be <code>feminine</code></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Names of wines and algoholic beverages tend to be <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le whisky" title="le whisky — whisky">🔊 le whisky <span class="gloss">whisky</span></button>, <button type="button" class="pronounce" data-say="le sake" title="le sake — sake">🔊 le sake <span class="gloss">sake</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la bière" title="la bière — beer">🔊 la bière <span class="gloss">beer</span></button>, <button type="button" class="pronounce" data-say="la vodka" title="la vodka — vodka">🔊 la vodka <span class="gloss">vodka</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Names of cheese tend to be <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le brie" title="le brie — brie">🔊 le brie <span class="gloss">brie</span></button>, <button type="button" class="pronounce" data-say="le cheddar" title="le cheddar — cheddar">🔊 le cheddar <span class="gloss">cheddar</span></button>, <button type="button" class="pronounce" data-say="le parmesan" title="le parmesan — parmesan">🔊 le parmesan <span class="gloss">parmesan</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la feta" title="la feta — feta">🔊 la feta <span class="gloss">feta</span></button>, <button type="button" class="pronounce" data-say="la mozzarella" title="la mozzarella — mozzarella">🔊 la mozzarella <span class="gloss">mozzarella</span></button>, <button type="button" class="pronounce" data-say="la ricotta" title="la ricotta — ricotta">🔊 la ricotta <span class="gloss">ricotta</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Colors, Fabric, Elements</li>
+  </ul>
+  <ul>
+  <li>the word <strong>couleur</strong>(color) itself is <code>feminine</code> as it ends with <strong>-eur</strong>. The colors themselves are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le blanc" title="le blanc — white">🔊 le blanc <span class="gloss">white</span></button>, {le bleu, blue}, <button type="button" class="pronounce" data-say="le gris" title="le gris — gray">🔊 le gris <span class="gloss">gray</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Most names of fabric are <code>masculine</code></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="le coton" title="le coton — cotton">🔊 le coton <span class="gloss">cotton</span></button>, <button type="button" class="pronounce" data-say="le cuir" title="le cuir — leather">🔊 le cuir <span class="gloss">leather</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la laine" title="la laine — wool">🔊 la laine <span class="gloss">wool</span></button>, <button type="button" class="pronounce" data-say="la soie" title="la soie — silk">🔊 la soie <span class="gloss">silk</span></button></li>
+  </ul>
+  <li>Precious Stones</li>
+  <ul>
+  <li>Stones can be either <code>masculine</code> or <code>feminine</code></li>
+  <li>e.g., <button type="button" class="pronounce" data-say="le dimant" title="le dimant — diamond">🔊 le dimant <span class="gloss">diamond</span></button>, <button type="button" class="pronounce" data-say="le jade" title="le jade — jade">🔊 le jade <span class="gloss">jade</span></button></li>
+  <li>e.g., <button type="button" class="pronounce" data-say="la topaze" title="la topaze — topaz,">🔊 la topaze <span class="gloss">topaz,</span></button>, <button type="button" class="pronounce" data-say="l&#x27;opale" title="l&#x27;opale — opal">🔊 l&#x27;opale <span class="gloss">opal</span></button></li>
+  </ul>
+  <li>Metals, Minerals, Chemical Elements</li>
+  <ul>
+  <li>Most names of metals, minerals, and chemical elements are <code>masculine</code></li>
+  <li>e.g., <button type="button" class="pronounce" data-say="l&#x27;argent" title="l&#x27;argent — silver">🔊 l&#x27;argent <span class="gloss">silver</span></button>, <button type="button" class="pronounce" data-say="le cuivre" title="le cuivre — copper">🔊 le cuivre <span class="gloss">copper</span></button>, <button type="button" class="pronounce" data-say="le sel" title="le sel — salt">🔊 le sel <span class="gloss">salt</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="la chaux" title="la chaux — lime">🔊 la chaux <span class="gloss">lime</span></button>, <button type="button" class="pronounce" data-say="la roche" title="la roche — rock">🔊 la roche <span class="gloss">rock</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Cars</li>
+  <ul>
+  <li>In most cases, cars are used in <code>feminine</code> form</li>
+  <li>Some minivans or SUVs use <code>masculine</code> form</li>
+  </ul>
+  </ul>
+  <h2>Chapter 4 - Numbers</h2>
+  <h3>Numbers 0 - 50</h3>
+  <ul>
+  <li>Although consonants are generally silent in French, they are pronounced in following number: <strong>cinq</strong>, <strong>six</strong>, <strong>sept</strong>, <strong>huit</strong>, <strong>neuf</strong>, <strong>dix</strong></li>
+  <ul>
+  <li>with <strong>sept</strong>, <strong>-p-</strong> is silent but <strong>-t</strong> is pronounced</li>
+  <li>with <strong>six</strong>, <strong>dix</strong>, <strong>-x</strong> is pronounced like an <strong>s</strong></li>
+  <li>when <strong>cinq</strong>, <strong>six</strong>, <strong>huit</strong>, and <strong>dix</strong> are followed by a word beginning with a consonant, their final consonant is mute(silent)</li>
+  <li><button type="button" class="pronounce" data-say="zéro" title="zéro — zero">🔊 zéro <span class="gloss">zero</span></button>, <button type="button" class="pronounce" data-say="un" title="un — one">🔊 un <span class="gloss">one</span></button>, <button type="button" class="pronounce" data-say="deux" title="deux — two">🔊 deux <span class="gloss">two</span></button>, <button type="button" class="pronounce" data-say="trois" title="trois — three">🔊 trois <span class="gloss">three</span></button>, <button type="button" class="pronounce" data-say="quatre" title="quatre — four">🔊 quatre <span class="gloss">four</span></button>, <button type="button" class="pronounce" data-say="cinq" title="cinq — five">🔊 cinq <span class="gloss">five</span></button>, <button type="button" class="pronounce" data-say="six" title="six — six">🔊 six <span class="gloss">six</span></button>, <button type="button" class="pronounce" data-say="sept" title="sept — seven">🔊 sept <span class="gloss">seven</span></button>, <button type="button" class="pronounce" data-say="huit" title="huit — eight">🔊 huit <span class="gloss">eight</span></button>, <button type="button" class="pronounce" data-say="neuf" title="neuf — nine">🔊 neuf <span class="gloss">nine</span></button>, <button type="button" class="pronounce" data-say="dix" title="dix — ten">🔊 dix <span class="gloss">ten</span></button>, <button type="button" class="pronounce" data-say="onze" title="onze — eleven">🔊 onze <span class="gloss">eleven</span></button>, <button type="button" class="pronounce" data-say="douze" title="douze — twelve">🔊 douze <span class="gloss">twelve</span></button>, <button type="button" class="pronounce" data-say="treize" title="treize — thirteen">🔊 treize <span class="gloss">thirteen</span></button>, <button type="button" class="pronounce" data-say="quatorze" title="quatorze — fourteen">🔊 quatorze <span class="gloss">fourteen</span></button>, <button type="button" class="pronounce" data-say="quinze" title="quinze — fifteen">🔊 quinze <span class="gloss">fifteen</span></button>, <button type="button" class="pronounce" data-say="seize" title="seize — sixteen">🔊 seize <span class="gloss">sixteen</span></button></li>
+  <li><button type="button" class="pronounce" data-say="dix-sept" title="dix-sept — seventeen">🔊 dix-sept <span class="gloss">seventeen</span></button>, <button type="button" class="pronounce" data-say="dix-huit" title="dix-huit — eighteen">🔊 dix-huit <span class="gloss">eighteen</span></button>, <button type="button" class="pronounce" data-say="dix-neuf" title="dix-neuf — nineteen">🔊 dix-neuf <span class="gloss">nineteen</span></button></li>
+  <li><button type="button" class="pronounce" data-say="vingt" title="vingt — twenty">🔊 vingt <span class="gloss">twenty</span></button>, <button type="button" class="pronounce" data-say="vingt et un" title="vingt et un — twenty-one">🔊 vingt et un <span class="gloss">twenty-one</span></button></li>
+  <li><button type="button" class="pronounce" data-say="trente" title="trente — thirty">🔊 trente <span class="gloss">thirty</span></button>, <button type="button" class="pronounce" data-say="trente et un" title="trente et un — thirty-one">🔊 trente et un <span class="gloss">thirty-one</span></button></li>
+  <li><button type="button" class="pronounce" data-say="quarante" title="quarante — forty">🔊 quarante <span class="gloss">forty</span></button>, <button type="button" class="pronounce" data-say="quarante et un" title="quarante et un — forty-one">🔊 quarante et un <span class="gloss">forty-one</span></button></li>
+  <li><button type="button" class="pronounce" data-say="cinquante" title="cinquante — fifty">🔊 cinquante <span class="gloss">fifty</span></button></li>
+  </ul>
+  </ul>
+  <h3>Number 51 - 100</h3>
+  <ul>
+  <li>50-59</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="cinquante" title="cinquante — fifty">🔊 cinquante <span class="gloss">fifty</span></button>, <button type="button" class="pronounce" data-say="cinquante et un" title="cinquante et un — fifty-one">🔊 cinquante et un <span class="gloss">fifty-one</span></button></li>
+  </ul>
+  <li>60-69</li>
+  <ul>
+  <li><button type="button" class="pronounce" data-say="soixante" title="soixante — sixty">🔊 soixante <span class="gloss">sixty</span></button>, <button type="button" class="pronounce" data-say="soixante et un" title="soixante et un — sixty-one">🔊 soixante et un <span class="gloss">sixty-one</span></button></li>
+  </ul>
+  <li>For 70-79, add teen numbers to <button type="button" class="pronounce" data-say="soixante" title="soixante — sixty">🔊 soixante <span class="gloss">sixty</span></button></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="soixante et onze" title="soixante et onze — seventy-one">🔊 soixante et onze <span class="gloss">seventy-one</span></button></li>
+  </ul>
+  <li>For 80-99, add <button type="button" class="pronounce" data-say="un" title="un — one">🔊 un <span class="gloss">one</span></button> all the way to <button type="button" class="pronounce" data-say="dix-neuf" title="dix-neuf — nineteen">🔊 dix-neuf <span class="gloss">nineteen</span></button>, to <button type="button" class="pronounce" data-say="quatre-vingts" title="quatre-vingts — eighty/four twenties">🔊 quatre-vingts <span class="gloss">eighty/four twenties</span></button></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="quatre-vingt-un" title="quatre-vingt-un — eighty-one">🔊 quatre-vingt-un <span class="gloss">eighty-one</span></button>, <button type="button" class="pronounce" data-say="quatre-vingt-onze" title="quatre-vingt-onze — ninety-one">🔊 quatre-vingt-onze <span class="gloss">ninety-one</span></button>, <button type="button" class="pronounce" data-say="quatre-vingt-dix-neuf" title="quatre-vingt-dix-neuf — ninety-nine">🔊 quatre-vingt-dix-neuf <span class="gloss">ninety-nine</span></button></li>
+  </ul>
+  <li>For 100 - 999</li>
+  <ul>
+  <li>add <strong>-s</strong> to <strong>cent</strong>, except when <strong>cent</strong> is followed by another number</li>
+  <li>e.g, <button type="button" class="pronounce" data-say="cent" title="cent — one hundred">🔊 cent <span class="gloss">one hundred</span></button>, <button type="button" class="pronounce" data-say="deux cents" title="deux cents — two hundreds">🔊 deux cents <span class="gloss">two hundreds</span></button>, <button type="button" class="pronounce" data-say="huit cent vingt-quare" title="huit cent vingt-quare — eight hundred twenty-four">🔊 huit cent vingt-quare <span class="gloss">eight hundred twenty-four</span></button></li>
+  </ul>
+  <li>1000 +</li>
+  <ul>
+  <li><strong>never</strong> add <strong>-s</strong> to <strong>mille</strong></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="mille" title="mille — one thousnad">🔊 mille <span class="gloss">one thousnad</span></button>, <button type="button" class="pronounce" data-say="deux mille" title="deux mille — two thousand">🔊 deux mille <span class="gloss">two thousand</span></button></li>
+  </ul>
+  <li>Add <strong>-s</strong> to <strong>million</strong> and <strong>milliard</strong> when greater than <strong>un</strong></li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="un million" title="un million — one million">🔊 un million <span class="gloss">one million</span></button>, <button type="button" class="pronounce" data-say="un milliard" title="un milliard — one billion">🔊 un milliard <span class="gloss">one billion</span></button></li>
+  </ul>
+  </ul>
+  <li>Years are written as follow</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="mille neuf cent soixante-dix-huit" title="mille neuf cent soixante-dix-huit — 1978">🔊 mille neuf cent soixante-dix-huit <span class="gloss">1978</span></button> <button type="button" class="pronounce" data-say="deux mille huit" title="deux mille huit — 2008">🔊 deux mille huit <span class="gloss">2008</span></button></li>
+  </ul>
+  </ul>
+  <h3>Ordinal Numbers</h3>
+  <ul>
+  <li>Ordinal numbers, for most part, follow a regular pattern, ending with <strong>-ième</strong>.</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="deuxième" title="deuxième — second">🔊 deuxième <span class="gloss">second</span></button>, <button type="button" class="pronounce" data-say="troisième" title="troisième — third">🔊 troisième <span class="gloss">third</span></button></li>
+  <li>exceptions: <button type="button" class="pronounce" data-say="premier" title="premier — first">🔊 premier <span class="gloss">first</span></button>, <button type="button" class="pronounce" data-say="première" title="première — first">🔊 première <span class="gloss">first</span></button>, <button type="button" class="pronounce" data-say="dernier" title="dernier — last">🔊 dernier <span class="gloss">last</span></button>, <button type="button" class="pronounce" data-say="dernière" title="dernière — last">🔊 dernière <span class="gloss">last</span></button></li>
+  </ul>
+  </ul>
+  <h2>Chapter 5 - Vocabulary</h2>
+  <ul>
+  <li>To fill in later</li>
+  </ul>
+  <h2>Chapter 6 - Building Sentences</h2>
+  <h3>Declararive Sentence</h3>
+  <ul>
+  <li>Subject + Predicate</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Elle n&#x27;aime pas le bruit" title="Elle n&#x27;aime pas le bruit — She does not like noise">🔊 Elle n&#x27;aime pas le bruit <span class="gloss">She does not like noise</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Compound Subject + Predicate</li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="Paul et Raymond vont à Nice" title="Paul et Raymond vont à Nice — Paul and Raymond go to Nice">🔊 Paul et Raymond vont à Nice <span class="gloss">Paul and Raymond go to Nice</span></button>, <button type="button" class="pronounce" data-say="Gérard ou Arthur va venir me chercher" title="Gérard ou Arthur va venir me chercher — Gerard or Arthur is going to pick me up">🔊 Gérard ou Arthur va venir me chercher <span class="gloss">Gerard or Arthur is going to pick me up</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Declarative sentence with direct object nouns</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Marie aime Paul" title="Marie aime Paul — Marie loves Paul">🔊 Marie aime Paul <span class="gloss">Marie loves Paul</span></button>, <button type="button" class="pronounce" data-say="Tu appelles Jean" title="Tu appelles Jean — You call Jean">🔊 Tu appelles Jean <span class="gloss">You call Jean</span></button>, <button type="button" class="pronounce" data-say="Elle lave la vaisselle" title="Elle lave la vaisselle — She washes the dishes">🔊 Elle lave la vaisselle <span class="gloss">She washes the dishes</span></button></li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Declarative sentence with direct and indirect object nouns</li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="Rémy a acheté un livre à son père" title="Rémy a acheté un livre à son père — Remy bought a book for his father">🔊 Rémy a acheté un livre à son père <span class="gloss">Remy bought a book for his father</span></button></li>
+  <li>in English, it could be arranged as <strong>Remy bough his father a book</strong>, but <strong>NOT</strong> in French</li>
+  </ul>
+  </ul>
+  <ul>
+  <li>Negative declarative sentence</li>
+  <ul>
+  <li>To make an affirmative sentence negative</li>
+  <ul>
+  <li>place the word <strong>ne</strong>(or <strong>n&#x27;</strong> before a vowel sound) and</li>
+  <li>place the word <strong>pas</strong> directly after the verb</li>
+  </ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="Michelle joue au basket" title="Michelle joue au basket — Michelle plays basketball">🔊 Michelle joue au basket <span class="gloss">Michelle plays basketball</span></button> -&gt; <button type="button" class="pronounce" data-say="Michelle ne joue pas au basket" title="Michelle ne joue pas au basket">🔊 Michelle ne joue pas au basket</button>, <button type="button" class="pronounce" data-say="Marius habite à Marseille" title="Marius habite à Marseille — Marius lives in Marseille">🔊 Marius habite à Marseille <span class="gloss">Marius lives in Marseille</span></button> -&gt; <button type="button" class="pronounce" data-say="Marius n&#x27;habite pas à Marseille" title="Marius n&#x27;habite pas à Marseille">🔊 Marius n&#x27;habite pas à Marseille</button></li>
+  <li>Other negative words or phrases that are used to create negative declarative sentences</li>
+  <ul>
+  <li>e.g. <button type="button" class="pronounce" data-say="rien" title="rien — nothing">🔊 rien <span class="gloss">nothing</span></button>, <button type="button" class="pronounce" data-say="plus" title="plus — no longer">🔊 plus <span class="gloss">no longer</span></button>, <button type="button" class="pronounce" data-say="jamais" title="jamais — never">🔊 jamais <span class="gloss">never</span></button>, <button type="button" class="pronounce" data-say="personne" title="personne — nobody">🔊 personne <span class="gloss">nobody</span></button>, <button type="button" class="pronounce" data-say="ni" title="ni — neihter/nor">🔊 ni <span class="gloss">neihter/nor</span></button>, <button type="button" class="pronounce" data-say="nulle part" title="nulle part — nowhere">🔊 nulle part <span class="gloss">nowhere</span></button></li>
+  <li>they are placed after verb,just like <strong>pas</strong></li>
+  <li>requires <strong>ne</strong> or <strong>n&#x27;</strong> before the verb</li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="Je ne sais rien" title="Je ne sais rien — I know nothing">🔊 Je ne sais rien <span class="gloss">I know nothing</span></button></li>
+  </ul>
+  <li>unlike English, two or three negative words can be used in a French sentence</li>
+  <ul>
+  <li>e.g, <button type="button" class="pronounce" data-say="Cela ne se fait jamais nulle part" title="Cela ne se fait jamais nulle part — This should never be done anywhere/nowhere">🔊 Cela ne se fait jamais nulle part <span class="gloss">This should never be done anywhere/nowhere</span></button>, <button type="button" class="pronounce" data-say="Il n&#x27;y a plus personne" title="Il n&#x27;y a plus personne — There is nobody left/nobody anymore">🔊 Il n&#x27;y a plus personne <span class="gloss">There is nobody left/nobody anymore</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  </ul>
+  <h2>Chapter 7 - Asking Questions</h2>
+  <p>In French the intonation or rising pitch at the end of a sentence signals for the listener that a question is being asked.</p>
+  <ul>
+  <li>this is preferred in oral interactions</li>
+  <li>a question mark helps identify an interrogative sentence</li>
+  </ul>
+  <h3>Affirmative Interrogative Sentence</h3>
+  <ul>
+  <li>Declarative sentence +? -&gt; Interrogative sentence</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Le magasin est fermé" title="Le magasin est fermé — The store is closed">🔊 Le magasin est fermé <span class="gloss">The store is closed</span></button> -&gt; <button type="button" class="pronounce" data-say="Le magasin est fermé?" title="Le magasin est fermé? — The store is closed?">🔊 Le magasin est fermé? <span class="gloss">The store is closed?</span></button></li>
+  <li>to answer yes, use <strong>oui</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Ils vont au cours?" title="Ils vont au cours? — Do they go to class">🔊 Ils vont au cours? <span class="gloss">Do they go to class</span></button>, <button type="button" class="pronounce" data-say="Oui main plus tard" title="Oui main plus tard — Yes but later">🔊 Oui main plus tard <span class="gloss">Yes but later</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <h3>Negative Interrogative Sentence</h3>
+  <ul>
+  <li>Negative declarative sentence +? -&gt; Interrogative sentence</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Vous ne travailliez pas pour nous" title="Vous ne travailliez pas pour nous — You were not working for us">🔊 Vous ne travailliez pas pour nous <span class="gloss">You were not working for us</span></button> -&gt; <button type="button" class="pronounce" data-say="Vous ne travailliez pas pour nous?" title="Vous ne travailliez pas pour nous? — You were not working for us?">🔊 Vous ne travailliez pas pour nous? <span class="gloss">You were not working for us?</span></button></li>
+  <li>to answer yes, use <strong>si</strong></li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="Ils ne vont pas au cours?" title="Ils ne vont pas au cours? — Don&#x27;t they go to class">🔊 Ils ne vont pas au cours? <span class="gloss">Don&#x27;t they go to class</span></button>, <button type="button" class="pronounce" data-say="Si main plus tard" title="Si main plus tard — Yes but later">🔊 Si main plus tard <span class="gloss">Yes but later</span></button></li>
+  </ul>
+  <li>Some adverbs can be added to <strong>pas</strong> to build interrogative sentence</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="pas encore" title="pas encore — not yet">🔊 pas encore <span class="gloss">not yet</span></button>, <button type="button" class="pronounce" data-say="pas toujours" title="pas toujours — not always">🔊 pas toujours <span class="gloss">not always</span></button>, <button type="button" class="pronounce" data-say="pas ici" title="pas ici — not here">🔊 pas ici <span class="gloss">not here</span></button>, <button type="button" class="pronounce" data-say="pas bien" title="pas bien — not well">🔊 pas bien <span class="gloss">not well</span></button></li>
+  </ul>
+  <li>similarly, negative phrase can be used to build interrogative sentence</li>
+  <ul>
+  <li>e.g., <button type="button" class="pronounce" data-say="ne plus" title="ne plus — no longer">🔊 ne plus <span class="gloss">no longer</span></button> -&gt; <button type="button" class="pronounce" data-say="Elle ne joue plus au piaona?" title="Elle ne joue plus au piaona? — She does not play piano anymore?">🔊 Elle ne joue plus au piaona? <span class="gloss">She does not play piano anymore?</span></button></li>
+  </ul>
+  </ul>
+  </ul>
+  <h3>Interrogative Sentence with <strong>est-ce que</strong></h3>
+  <ul>
+  <li><strong>est-ce que</strong> + declarative sentence -&gt; interrogative sentence</li>
+  <ul>
+  <li>e.g., </li>
+  </ul>
+  </ul>
+  </main>
+
+<script>
+(function () {
+  "use strict";
+
+  // Voices may load asynchronously; keep the latest list handy.
+  var frenchVoice = null;
+  function pickVoice() {
+    var voices = window.speechSynthesis.getVoices();
+    for (var i = 0; i < voices.length; i++) {
+      if (voices[i].lang && voices[i].lang.toLowerCase().indexOf("fr") === 0) {
+        frenchVoice = voices[i];
+        break;
+      }
+    }
+  }
+  pickVoice();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = pickVoice;
+  }
+
+  document.addEventListener("click", function (event) {
+    var button = event.target.closest ? event.target.closest("button.pronounce") : null;
+    if (!button) {
+      return;
+    }
+    var text = button.getAttribute("data-say");
+    if (!text) {
+      return;
+    }
+    // Native bridge: the iOS app injects window.fpbridge at document start to
+    // speak via AVSpeechSynthesizer (WebKit's Web Speech API is silently
+    // unreliable on iOS).  fpbridge is undefined in the PWA/desktop, so the
+    // Web Speech path below runs unchanged for them.
+    if (window.fpbridge && window.fpbridge.speak) {
+      window.fpbridge.speak(text);
+      return;
+    }
+    if (!("speechSynthesis" in window)) {
+      alert("Your browser does not support text-to-speech.");
+      return;
+    }
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "fr-FR";
+    if (frenchVoice) {
+      utter.voice = frenchVoice;
+    }
+    utter.rate = 0.9; // slightly slower is friendlier for learners
+    window.speechSynthesis.cancel(); // stop any word already playing
+    window.speechSynthesis.speak(utter);
+  });
+})();
+</script>
+</body>
+</html>

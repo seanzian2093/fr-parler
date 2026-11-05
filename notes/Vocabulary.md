@@ -64,8 +64,8 @@ double braces becomes a pronounce button when built.
 
 ## Pronouns
 
-- {{je, I}}, {{Nous, we}}
-- {{tu, you}}
-- {{elle, she}}, {{Il, he}}
-- {{cela, this}}
+- {{je, I}}, {{Nous, we/us}}
+- {{tu, you}}, {{vous, you}}
+- {{elle, she}}, {{il, he}}, {{ils, they}}
+- {{cela, this}}, {{cette, this}}
 

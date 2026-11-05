@@ -555,3 +555,33 @@ The following endings **tend** to be masculine
       - e.g, {{Je ne sais rien, I know nothing}}
     - unlike English, two or three negative words can be used in a French sentence
       - e.g, {{Cela ne se fait jamais nulle part, This should never be done anywhere/nowhere}}, {{Il n'y a plus personne, There is nobody left/nobody anymore}}
+
+## Chapter 7 - Asking Questions
+
+In French the intonation or rising pitch at the end of a sentence signals for the listener that a question is being asked.
+
+- this is preferred in oral interactions
+- a question mark helps identify an interrogative sentence
+
+### Affirmative Interrogative Sentence
+
+- Declarative sentence +? -> Interrogative sentence
+  - e.g., {{Le magasin est fermé, The store is closed}} -> {{Le magasin est fermé?, The store is closed?}}
+  - to answer yes, use **oui**
+    - e.g., {{Ils vont au cours?, Do they go to class}}, {{Oui main plus tard, Yes but later}}
+
+### Negative Interrogative Sentence
+
+- Negative declarative sentence +? -> Interrogative sentence
+  - e.g., {{Vous ne travailliez pas pour nous, You were not working for us}} -> {{Vous ne travailliez pas pour nous?, You were not working for us?}}
+  - to answer yes, use **si**
+    - e.g., {{Ils ne vont pas au cours?, Don't they go to class}}, {{Si main plus tard, Yes but later}}
+  - Some adverbs can be added to **pas** to build interrogative sentence
+    - e.g., {{pas encore, not yet}}, {{pas toujours, not always}}, {{pas ici, not here}}, {{pas bien, not well}}
+  - similarly, negative phrase can be used to build interrogative sentence
+    - e.g., {{ne plus, no longer}} -> {{Elle ne joue plus au piaona?, She does not play piano anymore?}}
+
+### Interrogative Sentence with **est-ce que**
+
+- **est-ce que** + declarative sentence -> interrogative sentence
+  - e.g., 
